@@ -523,6 +523,46 @@ h1 {
   padding: 0;
 }
 
+.bibtex-block {
+  position: relative;
+  margin-top: 0.5rem;
+}
+
+.bibtex-block pre {
+  margin: 0;
+  padding-top: 2.65rem;
+}
+
+.bibtex-copy {
+  position: absolute;
+  top: 0.55rem;
+  right: 0.55rem;
+  z-index: 1;
+  appearance: none;
+  font: inherit;
+  font-size: 0.85rem;
+  padding: 0.35rem 0.65rem;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text);
+  cursor: pointer;
+}
+
+.bibtex-copy:hover {
+  background: var(--surface-2);
+}
+
+.bibtex-copy:focus-visible {
+  outline: 2px solid color-mix(in srgb, var(--brand) 55%, transparent);
+  outline-offset: 2px;
+}
+
+.bibtex-copy:disabled {
+  opacity: 0.75;
+  cursor: default;
+}
+
 .people-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);

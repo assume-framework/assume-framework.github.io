@@ -1,6 +1,33 @@
+import { useCallback, useState } from 'react';
 import { Link } from 'react-router-dom';
 
+const ASSUME_BIBTEX = `@article{ASSUME,
+  title = {{ASSUME: An agent-based simulation framework for exploring electricity market dynamics with reinforcement learning}},
+  author = {Harder, Nick and Miskiw, Kim K and Khanra, Manish and Maurer, Florian and Patil, Parag and Qussous, Ramiz and Weinhardt, Christof and Klobasa, Marian and Ragwitz, Mario and Weidlich, Anke},
+  journal = {SoftwareX},
+  volume = {30},
+  pages = {102176},
+  year = {2025},
+  issn = {2352-7110},
+  doi = {10.1016/j.softx.2025.102176},
+  url = {https://www.sciencedirect.com/science/article/pii/S2352711025001438},
+  keywords = {Electricity markets, Python, Reinforcement learning, Agent-based modeling}
+}`;
+
 export function PublicationsPage() {
+  const [copyState, setCopyState] = useState<'idle' | 'copied' | 'error'>('idle');
+
+  const copyBibtex = useCallback(async () => {
+    try {
+      await navigator.clipboard.writeText(ASSUME_BIBTEX);
+      setCopyState('copied');
+      window.setTimeout(() => setCopyState('idle'), 2000);
+    } catch {
+      setCopyState('error');
+      window.setTimeout(() => setCopyState('idle'), 2500);
+    }
+  }, []);
+
   return (
     <section className="section">
       <div className="container">
@@ -16,7 +43,7 @@ export function PublicationsPage() {
         </div>
 
         <div className="prose" style={{ marginTop: '1rem' }}>
-          <h2>Cite ASSUME (recommended)</h2>
+          <h2>Cite ASSUME</h2>
           <p>
             Cite the SoftwareX article:{' '}
             <em>
@@ -36,25 +63,26 @@ export function PublicationsPage() {
           </p>
 
           <h3>BibTeX</h3>
-          <pre>
-            <code>{`@article{ASSUME,
-  title = {{ASSUME: An agent-based simulation framework for exploring electricity market dynamics with reinforcement learning}},
-  author = {Harder, Nick and Miskiw, Kim K and Khanra, Manish and Maurer, Florian and Patil, Parag and Qussous, Ramiz and Weinhardt, Christof and Klobasa, Marian and Ragwitz, Mario and Weidlich, Anke},
-  journal = {SoftwareX},
-  volume = {30},
-  pages = {102176},
-  year = {2025},
-  issn = {2352-7110},
-  doi = {10.1016/j.softx.2025.102176},
-  url = {https://www.sciencedirect.com/science/article/pii/S2352711025001438},
-  keywords = {Electricity markets, Python, Reinforcement learning, Agent-based modeling}
-}`}</code>
-          </pre>
+          <div className="bibtex-block">
+            <button
+              type="button"
+              className="bibtex-copy"
+              onClick={copyBibtex}
+              aria-label="Copy BibTeX to clipboard"
+            >
+              {copyState === 'copied' ? 'Copied' : copyState === 'error' ? 'Failed' : 'Copy'}
+            </button>
+            <pre>
+              <code>{ASSUME_BIBTEX}</code>
+            </pre>
+          </div>
 
           <p>
             Releases are archived on Zenodo with version-specific DOIs; see the repository for current links.
           </p>
 
+        </div>
+        <div className="prose" style={{ marginTop: '1rem' }}>
           <h2>Related publications</h2>
           <p className="muted">Further reading on multi-agent electricity markets, reinforcement learning, and related methods.</p>
 
