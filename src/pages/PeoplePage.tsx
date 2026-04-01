@@ -1,5 +1,91 @@
 import { Link } from 'react-router-dom';
 
+type TeamMember = {
+  id: string;
+  name: string;
+  meta: string;
+  bio: string;
+  initials: string;
+  /** Path under `public/`, e.g. `/img/people/gunter-grimm.jpg` */
+  photoSrc?: string;
+};
+
+const team: TeamMember[] = [
+  {
+    id: 'grimm',
+    name: 'Gunter Grimm',
+    meta: 'INATECH CIG, University of Freiburg',
+    bio: "Research associate and doctoral student focusing on market participants' interaction with regulation and market design across time horizons. He coordinates the ADAPT project.",
+    initials: 'GG',
+    photoSrc: '/img/people/gunter-grimm.jpg',
+  },
+  {
+    id: 'raskob',
+    name: 'Jannik Raskob',
+    meta: 'FH Aachen - University of Applied Sciences',
+    bio: 'ASSUME GUI, reinforcement learning, market simulation',
+    initials: 'JR',
+  },
+  {
+    id: 'reinecke',
+    name: 'Finn Reinecke',
+    meta: 'INATECH CIG, University of Freiburg',
+    bio: 'Reinforcement learning, market simulation',
+    initials: 'FR',
+  },
+  {
+    id: 'thederan',
+    name: 'Marie Thederan',
+    meta: 'WIN - IM, KIT',
+    bio: 'Reinforcement learning, market simulation, market learning',
+    initials: 'MT',
+  },
+  {
+    id: 'miskiw',
+    name: 'Kim K. Miskiw',
+    meta: 'WIN - IM, KIT',
+    bio: 'Research interests include deep reinforcement learning in electricity market simulations, agent-based electricity market modeling, energy market engineering, and stochastic optimization (including work on bidding under uncertainty in sequential markets).',
+    initials: 'KM',
+    photoSrc: '/img/people/kim-k-miskiw.png',
+  },
+  {
+    id: 'khanra',
+    name: 'Manish Khanra',
+    meta: 'Fraunhofer ISI',
+    bio: 'Works on integrating hydrogen and e-fuels for decarbonizing hard-to-abate sectors, electricity market and technology diffusion models, and policy aspects for industry sectors - connected to ASSUME-related energy-market studies.',
+    initials: 'MK',
+    photoSrc: '/img/people/manish-khanra.png',
+  },
+  {
+    id: 'maurer',
+    name: 'Florian Maurer',
+    meta: 'FH Aachen - University of Applied Sciences',
+    bio: 'Open-source development, agent-based modeling of energy markets to compare market designs and policies.',
+    initials: 'FM',
+    photoSrc: '/img/people/florian-maurer.png',
+  },
+  {
+    id: 'harder',
+    name: 'Nick Harder',
+    meta: 'Former INATECH CIG',
+    bio: 'Former core developer of ASSUME, initial developer of reinforcement learning and project lead of the ASSUME project.',
+    initials: 'NH',
+  },
+];
+
+function PersonVisual({ member }: { member: TeamMember }) {
+  if (member.photoSrc) {
+    return (
+      <img className="person-photo" src={member.photoSrc} alt="" width={64} height={64} loading="lazy" />
+    );
+  }
+  return (
+    <div className="avatar" aria-hidden="true">
+      {member.initials}
+    </div>
+  );
+}
+
 export function PeoplePage() {
   return (
     <section className="section">
@@ -35,114 +121,16 @@ export function PeoplePage() {
         </p>
 
         <div className="people-grid" style={{ marginTop: '1rem' }}>
-          <article className="card person">
-            <div className="avatar" aria-hidden="true">
-              GG
-            </div>
-            <div>
-              <h3>Gunter Grimm</h3>
-              <div className="meta">INATECH CIG, University of Freiburg</div>
-              <p>
-                Research associate and doctoral student focusing on market participants' interaction with regulation and market
-                design across time horizons. He coordinates the ADAPT project.
-              </p>
-            </div>
-          </article>
-
-          <article className="card person">
-            <div className="avatar" aria-hidden="true">
-              JR
-            </div>
-            <div>
-              <h3>Jannik Raskob</h3>
-              <div className="meta">FH Aachen - University of Applied Sciences</div>
-              <p>
-                ASSUME GUI, reinforcement learning, market simulation
-              </p>
-            </div>
-          </article>
-
-          <article className="card person">
-            <div className="avatar" aria-hidden="true">
-              FR
-            </div>
-            <div>
-              <h3>Finn Reinecke</h3>
-              <div className="meta">INATECH CIG, University of Freiburg</div>
-              <p>
-                reinforcement learning, market simulation
-              </p>
-            </div>
-          </article>
-
-          <article className="card person">
-            <div className="avatar" aria-hidden="true">
-              MT
-            </div>
-            <div>
-              <h3>Marie Thederan</h3>
-              <div className="meta">WIN - IM, KIT</div>
-              <p>
-                reinforcement learning, market simulation, market learning
-              </p>
-            </div>
-          </article>
-
-          <article className="card person">
-            <div className="avatar" aria-hidden="true">
-              KM
-            </div>
-            <div>
-              <h3>Kim K. Miskiw</h3>
-              <div className="meta">WIN - IM, KIT</div>
-              <p>
-                Research interests include deep reinforcement learning in electricity market simulations, agent-based electricity market
-                modeling, energy market engineering, and stochastic optimization (including work on bidding under uncertainty in
-                sequential markets).
-              </p>
-            </div>
-          </article>
-
-          <article className="card person">
-            <div className="avatar" aria-hidden="true">
-              MK
-            </div>
-            <div>
-              <h3>Manish Khanra</h3>
-              <div className="meta">Fraunhofer ISI</div>
-              <p>
-                Works on integrating hydrogen and e-fuels for decarbonizing hard-to-abate sectors, electricity market and technology
-                diffusion models, and policy aspects for industry sectors - connected to ASSUME-related energy-market studies.
-              </p>
-            </div>
-          </article>
-
-          <article className="card person">
-            <div className="avatar" aria-hidden="true">
-              FM
-            </div>
-            <div>
-              <h3>Florian Maurer</h3>
-              <div className="meta">FH Aachen - University of Applied Sciences</div>
-              <p>
-                Open-source development, agent-based modeling of energy markets to compare market designs
-                and policies.
-              </p>
-            </div>
-          </article>
-
-          <article className="card person">
-            <div className="avatar" aria-hidden="true">
-              NH
-            </div>
-            <div>
-              <h3>Nick Harder</h3>
-              <div className="meta">Former INATECH CIG</div>
-              <p>
-                Former core developer of ASSUME, initial developer of reinforcement learning and project lead of the ASSUME project.
-              </p>
-            </div>
-          </article>
+          {team.map((member) => (
+            <article key={member.id} className="card person">
+              <PersonVisual member={member} />
+              <div>
+                <h3>{member.name}</h3>
+                <div className="meta">{member.meta}</div>
+                <p>{member.bio}</p>
+              </div>
+            </article>
+          ))}
         </div>
       </div>
     </section>
