@@ -26,7 +26,7 @@ export const projects: Project[] = [
     subtitle: 'Core simulation toolbox',
     description:
       'Agent-based simulation toolbox for European electricity markets (focus: German setup), with optional deep reinforcement learning strategies.',
-    image: { src: '/img/assume-only-logo.png', alt: 'ASSUME' },
+    image: { src: '/img/assume-logo.png', alt: 'ASSUME' },
     links: [
       { label: 'Installation', href: 'https://assume.readthedocs.io/en/latest/installation.html' },
       { label: 'GitHub', href: 'https://github.com/assume-framework/assume' },

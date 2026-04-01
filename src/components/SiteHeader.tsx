@@ -15,7 +15,7 @@ export function SiteHeader() {
     <header className="site-header">
       <div className="container header-inner">
         <NavLink className="brand" to="/" onClick={() => setOpen(false)}>
-          <img src="/img/assume-logo.png" alt="ASSUME logo" width={64} height={64} />
+          <img src="/img/assume-only-logo.png" alt="ASSUME logo" width={64} height={64} />
           <span>
             <strong>ASSUME</strong>
             <span>Agent-based electricity market simulation</span>
