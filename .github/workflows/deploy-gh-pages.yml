@@ -1,0 +1,49 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+# After the first run: Settings → Pages → deploy from branch gh-pages / (root).
+# User/org site repos named `<name>.github.io` are served at https://<name>.github.io/ (root), so VITE_BASE must be / — not /<name>.github.io/.
+
+permissions:
+  contents: write
+
+concurrency:
+  group: gh-pages
+  cancel-in-progress: true
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version: '22'
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      # Project repo:  https://<owner>.github.io/<repo>/   →  VITE_BASE=/<repo>/
+      # *.github.io repo: site is at https://<name>.github.io/ (root) → VITE_BASE=/  — NOT /<name>.github.io/
+      - name: Build
+        env:
+          VITE_BASE: ${{ endsWith(github.event.repository.name, '.github.io') && '/' || format('/{0}/', github.event.repository.name) }}
+        run: |
+          echo "VITE_BASE=$VITE_BASE"
+          npm run build
+
+      - name: Deploy to gh-pages branch
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist
+          force_orphan: true
