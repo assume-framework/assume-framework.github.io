@@ -1,1 +1,111 @@
+.hero-section {
+  padding: 6rem 0;
+  text-align: center;
+  max-width: 900px;
+  margin: 0 auto;
+}
 
+.hero-title {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  letter-spacing: -0.03em;
+  margin-bottom: 1.5rem;
+  line-height: 1.1;
+}
+
+.hero-highlight {
+  color: var(--brand-primary);
+  /* A very subtle text shadow for a premium feel */
+  text-shadow: 0 4px 12px rgba(236, 111, 86, 0.2);
+}
+
+.hero-subtitle {
+  font-size: clamp(1.1rem, 2vw, 1.25rem);
+  color: var(--text-secondary);
+  margin: 0 auto 3rem;
+  max-width: 700px;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  padding: 4rem 0;
+}
+
+.feature-card {
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 2rem;
+  transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+}
+
+.feature-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--brand-secondary);
+}
+
+.feature-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-sm);
+  background-color: rgba(133, 203, 214, 0.15);
+  color: var(--brand-secondary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+}
+
+.feature-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.feature-card p {
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+.news-feed {
+  padding: 4rem 0;
+  border-top: 1px solid var(--border-color);
+  margin-top: 2rem;
+}
+
+.news-feed h2 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+.news-item {
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem 0;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.news-item:last-child {
+  border-bottom: none;
+}
+
+.news-date {
+  font-size: 0.875rem;
+  color: var(--brand-primary);
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+}
+
+.news-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin: 0;
+}
