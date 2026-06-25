@@ -1,4 +1,4 @@
-import { Mail, GitBranch } from 'lucide-react';
+import { Mail, GitBranch, MessageSquare, Users } from 'lucide-react';
 import { Button } from '../components/ui/Button';
 
 const team = [
@@ -107,14 +107,20 @@ export function CommunityPage() {
       <section style={{ borderTop: '1px solid var(--border-color)', paddingTop: '4rem' }}>
         <h2 style={{ fontSize: '2rem', marginBottom: '1.5rem' }}>Get in Touch</h2>
         <p style={{ color: 'var(--text-secondary)', marginBottom: '2rem', maxWidth: '600px' }}>
-          Have questions or want to collaborate? The best way to reach us is through our Matrix channel or by opening an issue on GitHub.
+          Have questions or want to collaborate? The best way to reach us is through our Matrix channel, opening an issue on GitHub, or asking on the OpenMod Discourse forum.
         </p>
         <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
-          <Button variant="primary" style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }} href="mailto:gunter.grimm@inatech.uni-freiburg.de">
-            <Mail size={18} /> Join Matrix Chat
+          <Button variant="primary" style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }} href="https://matrix.to/#/#assume-framework:matrix.org" target="_blank" rel="noopener noreferrer">
+            <MessageSquare size={18} /> Join Matrix Chat
+          </Button>
+          <Button variant="outline" style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }} href="https://forum.openmod.org/" target="_blank" rel="noopener noreferrer">
+            <Users size={18} /> OpenMod Forum
           </Button>
           <Button variant="outline" style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }} href="https://github.com/assume-framework/assume/issues" target="_blank" rel="noopener noreferrer">
             <GitBranch size={18} /> GitHub Issues
+          </Button>
+          <Button variant="outline" style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }} href="mailto:gunter.grimm@inatech.uni-freiburg.de">
+            <Mail size={18} /> Email Coordinator
           </Button>
         </div>
       </section>

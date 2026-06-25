@@ -20,6 +20,7 @@ export function Navbar() {
           <NavLink to="/toolbox" className={({isActive}) => isActive ? "nav-link active" : "nav-link"}>Toolbox</NavLink>
           <NavLink to="/research" className={({isActive}) => isActive ? "nav-link active" : "nav-link"}>Research</NavLink>
           <NavLink to="/roadmap" className={({isActive}) => isActive ? "nav-link active" : "nav-link"}>Roadmap</NavLink>
+          <NavLink to="/faq" className={({isActive}) => isActive ? "nav-link active" : "nav-link"}>FAQ</NavLink>
           <NavLink to="/community" className={({isActive}) => isActive ? "nav-link active" : "nav-link"}>Community</NavLink>
         </nav>
 
