@@ -1,4 +1,4 @@
-import { Terminal, Database, PlayCircle, BookOpen, Layers, AppWindow } from 'lucide-react';
+import { Database, PlayCircle, BookOpen, Layers, AppWindow } from 'lucide-react';
 import { Button } from '../components/ui/Button';
 
 export function ToolboxPage() {
