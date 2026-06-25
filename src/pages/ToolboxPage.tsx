@@ -40,6 +40,9 @@ export function ToolboxPage() {
           <p style={{ marginBottom: '1.5rem' }}>
             A companion web application that allows you to create ASSUME configurations directly in your browser. It acts as a configuration builder and runs scenarios via a backend service.
           </p>
+          <div style={{ marginBottom: '1.5rem', borderRadius: 'var(--radius-sm)', overflow: 'hidden', border: '1px solid var(--border-color)' }}>
+            <img src="/img/screenshots/assume-gui.png" alt="ASSUME GUI Dashboard" style={{ width: '100%', display: 'block' }} />
+          </div>
           <div style={{ display: 'flex', gap: '1rem' }}>
             <Button variant="outline" href="https://github.com/assume-framework/assume-gui" target="_blank" rel="noopener noreferrer">GitHub</Button>
             <Button variant="outline" href="https://assume.idt.fh-aachen.de" target="_blank" rel="noopener noreferrer">Live Demo</Button>
