@@ -47,6 +47,26 @@ export function HomePage() {
         </div>
       </section>
 
+      {/* Results in Action Section */}
+      <section style={{ margin: '6rem 0' }}>
+        <div style={{ textAlign: 'center', marginBottom: '3rem' }}>
+          <h2 style={{ fontSize: '2.5rem', marginBottom: '1rem' }}>Results in Action</h2>
+          <p style={{ fontSize: '1.2rem', color: 'var(--text-secondary)', maxWidth: '800px', margin: '0 auto', lineHeight: 1.6 }}>
+            ASSUME has been used to solve real-world market design problems, such as evaluating industrial demand-side flexibility, analyzing learning storage operators, and modeling congestion management. 
+            The ecosystem provides built-in integration with <strong>TimescaleDB</strong> and <strong>Grafana</strong> for instant scenario analysis.
+          </p>
+        </div>
+        
+        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '2rem', alignItems: 'center' }}>
+          <div style={{ borderRadius: 'var(--radius-lg)', overflow: 'hidden', border: '1px solid var(--border-color)', boxShadow: '0 10px 30px rgba(0,0,0,0.1)' }}>
+            <img src="/img/screenshots/Grafana_General.png" alt="Grafana General Dashboard showing electricity market prices and volumes" style={{ width: '100%', display: 'block' }} />
+          </div>
+          <div style={{ borderRadius: 'var(--radius-lg)', overflow: 'hidden', border: '1px solid var(--border-color)', boxShadow: '0 10px 30px rgba(0,0,0,0.1)' }}>
+            <img src="/img/screenshots/Grafana_General_2.png" alt="Grafana General Dashboard showing detailed agent dispatch profiles" style={{ width: '100%', display: 'block' }} />
+          </div>
+        </div>
+      </section>
+
       {/* News Feed Section */}
       <section className="news-feed">
         <h2>Latest Updates</h2>

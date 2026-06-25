@@ -75,6 +75,20 @@ export function ToolboxPage() {
         </div>
       </section>
 
+      <section style={{ backgroundColor: 'var(--bg-secondary)', padding: '3rem', borderRadius: 'var(--radius-lg)', border: '1px solid var(--border-color)', marginBottom: '4rem' }}>
+        <h2 style={{ marginBottom: '1.5rem', display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
+          <Database color="var(--brand-primary)" /> Feature Deep-Dives
+        </h2>
+        <p style={{ color: 'var(--text-secondary)', marginBottom: '2rem', maxWidth: '700px' }}>
+          Dive into the official documentation to explore the advanced capabilities of the ASSUME framework, including database integrations and learning algorithms.
+        </p>
+        <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
+          <Button variant="outline" href="https://assume.readthedocs.io/en/latest/installation.html#timescale-database-and-grafana-dashboards" target="_blank" rel="noopener noreferrer">TimescaleDB & Grafana Setup</Button>
+          <Button variant="outline" href="https://assume.readthedocs.io/en/latest/learning_algorithm.html" target="_blank" rel="noopener noreferrer">Deep Reinforcement Learning</Button>
+          <Button variant="outline" href="https://assume.readthedocs.io/en/latest/network_clearing.html" target="_blank" rel="noopener noreferrer">PyPSA Network Clearing</Button>
+        </div>
+      </section>
+
       <section style={{ borderTop: '1px solid var(--border-color)', paddingTop: '4rem' }}>
         <h2 style={{ marginBottom: '1.5rem' }}>Documentation & Contributing</h2>
         <p style={{ color: 'var(--text-secondary)', marginBottom: '2rem', maxWidth: '700px' }}>
