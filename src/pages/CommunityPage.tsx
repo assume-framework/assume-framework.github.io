@@ -16,7 +16,8 @@ const team = [
     name: 'Jannik Raskob',
     meta: 'FH Aachen - University of Applied Sciences',
     bio: 'PhD student working with agentic AI, ASSUME GUI and ontologies.',
-    initials: 'JR'
+    initials: 'JR',
+    image: '/img/people/jannik-raskob.jpg'
   },
   {
     id: 'reinecke',
