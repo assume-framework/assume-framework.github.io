@@ -14,7 +14,7 @@ const team = [
   {
     id: 'raskob',
     name: 'Jannik Raskob',
-    meta: 'FH Aachen - University of Applied Sciences',
+    meta: 'IDT, FH Aachen - University of Applied Sciences',
     bio: 'PhD student working with agentic AI, ASSUME GUI and ontologies.',
     initials: 'JR',
     image: '/img/people/jannik-raskob.jpg'
@@ -45,7 +45,7 @@ const team = [
   {
     id: 'maurer',
     name: 'Florian Maurer',
-    meta: 'FH Aachen - University of Applied Sciences',
+    meta: 'IDT, FH Aachen - University of Applied Sciences',
     bio: 'Open-source development, agent-based modeling of energy markets to compare market designs and policies.',
     initials: 'FM',
     image: '/img/people/florian-maurer.png'
@@ -88,11 +88,19 @@ export function CommunityPage() {
       <section style={{ marginBottom: '5rem' }}>
         <h2 style={{ fontSize: '2rem', marginBottom: '2rem' }}>Contributing Institutions</h2>
         <ul style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '1rem', listStyle: 'none', padding: 0 }}>
-          <li style={{ padding: '1.5rem', backgroundColor: 'var(--bg-secondary)', border: '1px solid var(--border-color)', borderRadius: 'var(--radius-sm)', fontWeight: 500 }}>INATECH CIG, University of Freiburg</li>
-          <li style={{ padding: '1.5rem', backgroundColor: 'var(--bg-secondary)', border: '1px solid var(--border-color)', borderRadius: 'var(--radius-sm)', fontWeight: 500 }}>WIN - IM, Karlsruhe Institute of Technology (KIT)</li>
-          <li style={{ padding: '1.5rem', backgroundColor: 'var(--bg-secondary)', border: '1px solid var(--border-color)', borderRadius: 'var(--radius-sm)', fontWeight: 500 }}>FH Aachen - University of Applied Sciences</li>
-          <li style={{ padding: '1.5rem', backgroundColor: 'var(--bg-secondary)', border: '1px solid var(--border-color)', borderRadius: 'var(--radius-sm)', fontWeight: 500 }}>Fraunhofer ISI</li>
-          <li style={{ padding: '1.5rem', backgroundColor: 'var(--bg-secondary)', border: '1px solid var(--border-color)', borderRadius: 'var(--radius-sm)', fontWeight: 500 }}>Fraunhofer IEG</li>
+          {[
+            { name: 'INATECH CIG, University of Freiburg', url: 'https://www.inatech.uni-freiburg.de/en/chairs/computational-economics' },
+            { name: 'WIN - IM, Karlsruhe Institute of Technology (KIT)', url: 'https://im.iism.kit.edu/' },
+            { name: 'IDT, FH Aachen - University of Applied Sciences', url: 'https://idt.fh-aachen.de' },
+            { name: 'Fraunhofer ISI', url: 'https://www.isi.fraunhofer.de/' },
+            { name: 'Fraunhofer IEG', url: 'https://www.ieg.fraunhofer.de/' }
+          ].map(inst => (
+            <li key={inst.name} style={{ padding: '1.5rem', backgroundColor: 'var(--bg-secondary)', border: '1px solid var(--border-color)', borderRadius: 'var(--radius-sm)', fontWeight: 500 }}>
+              <a href={inst.url} target="_blank" rel="noopener noreferrer" style={{ color: 'inherit', textDecoration: 'none', display: 'block', width: '100%', height: '100%' }}>
+                {inst.name}
+              </a>
+            </li>
+          ))}
         </ul>
       </section>
 
