@@ -1,5 +1,6 @@
 import { Database, PlayCircle, BookOpen, Layers, AppWindow } from 'lucide-react';
 import { Button } from '../components/ui/Button';
+import { FeatureCard } from '../components/ui/FeatureCard';
 
 export function ToolboxPage() {
   return (
@@ -14,11 +15,10 @@ export function ToolboxPage() {
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '2rem', marginBottom: '4rem' }}>
         
         {/* Core Engine */}
-        <div className="feature-card">
-          <div className="feature-icon" style={{ padding: 0, overflow: 'hidden', backgroundColor: 'transparent' }}>
-            <img src="/assume-only-logo.png" alt="ASSUME Logo" style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
-          </div>
-          <h3>ASSUME (Core Engine)</h3>
+        <FeatureCard
+          icon={<img src="/assume-only-logo.png" alt="ASSUME Logo" style={{ width: '100%', height: '100%', objectFit: 'contain' }} />}
+          title="ASSUME (Core Engine)"
+        >
           <p style={{ marginBottom: '1rem' }}>
             The Python-based engine that overcomes the limitations of fixed, rule-based behaviors in ABMs by leveraging DRL. It enables researchers to simulate strategic interactions under a wide range of scenarios.
           </p>
@@ -29,14 +29,10 @@ export function ToolboxPage() {
             <Button variant="outline" href="https://github.com/assume-framework/assume" target="_blank" rel="noopener noreferrer">GitHub</Button>
             <Button variant="outline" href="https://assume.readthedocs.io/en/latest/" target="_blank" rel="noopener noreferrer">Docs</Button>
           </div>
-        </div>
+        </FeatureCard>
 
         {/* GUI */}
-        <div className="feature-card">
-          <div className="feature-icon">
-            <AppWindow size={24} />
-          </div>
-          <h3>ASSUME GUI</h3>
+        <FeatureCard icon={<AppWindow size={24} />} title="ASSUME GUI">
           <p style={{ marginBottom: '1.5rem' }}>
             A companion web application that allows you to create ASSUME configurations directly in your browser. It acts as a configuration builder and runs scenarios via a backend service.
           </p>
@@ -47,21 +43,17 @@ export function ToolboxPage() {
             <Button variant="outline" href="https://github.com/assume-framework/assume-gui" target="_blank" rel="noopener noreferrer">GitHub</Button>
             <Button variant="outline" href="https://assume.idt.fh-aachen.de" target="_blank" rel="noopener noreferrer">Live Demo</Button>
           </div>
-        </div>
+        </FeatureCard>
 
         {/* Examples */}
-        <div className="feature-card">
-          <div className="feature-icon">
-            <Layers size={24} />
-          </div>
-          <h3>ASSUME Examples</h3>
+        <FeatureCard icon={<Layers size={24} />} title="ASSUME Examples">
           <p style={{ marginBottom: '1.5rem' }}>
             Runnable example scenarios and scripts in a separate, lightweight repository. Explore typical workflows quickly without bloating the main package.
           </p>
           <div style={{ display: 'flex', gap: '1rem' }}>
             <Button variant="outline" href="https://github.com/assume-framework/assume-examples" target="_blank" rel="noopener noreferrer">View Repository</Button>
           </div>
-        </div>
+        </FeatureCard>
       </div>
 
       <section style={{ backgroundColor: 'var(--bg-secondary)', padding: '3rem', borderRadius: 'var(--radius-lg)', border: '1px solid var(--border-color)', marginBottom: '4rem' }}>

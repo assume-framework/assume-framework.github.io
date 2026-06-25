@@ -1,4 +1,5 @@
 import { Button } from '../components/ui/Button';
+import { FeatureCard } from '../components/ui/FeatureCard';
 import { Zap, Network, Lightbulb } from 'lucide-react';
 import './home.css';
 
@@ -22,29 +23,17 @@ export function HomePage() {
 
       {/* Feature Cards Grid */}
       <section className="features-grid">
-        <div className="feature-card">
-          <div className="feature-icon">
-            <Network size={28} />
-          </div>
-          <h3>Sector Coupling & Grids</h3>
+        <FeatureCard icon={<Network size={28} />} title="Sector Coupling & Grids">
           <p>Model complex distribution networks and test incentive schemes for flexible loads like electrolyzers and industrial consumers.</p>
-        </div>
+        </FeatureCard>
 
-        <div className="feature-card">
-          <div className="feature-icon">
-            <Zap size={28} />
-          </div>
-          <h3>Deep Reinforcement Learning</h3>
+        <FeatureCard icon={<Zap size={28} />} title="Deep Reinforcement Learning">
           <p>A user-friendly, low-code RL toolbox designed for researchers to optimize market designs without deep programming expertise.</p>
-        </div>
+        </FeatureCard>
 
-        <div className="feature-card">
-          <div className="feature-icon">
-            <Lightbulb size={28} />
-          </div>
-          <h3>Adaptive Market-Agents</h3>
+        <FeatureCard icon={<Lightbulb size={28} />} title="Adaptive Market-Agents">
           <p>Simulate regulators and market authorities that autonomously tweak rules and observe participant reactions.</p>
-        </div>
+        </FeatureCard>
       </section>
 
       {/* Results in Action Section */}
