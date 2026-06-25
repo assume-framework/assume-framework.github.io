@@ -52,7 +52,7 @@ export function ResearchPage() {
             </p>
             <p style={{ color: 'var(--text-secondary)', lineHeight: 1.7 }}>
               That phase established the technical foundation used today for market-design studies - modular agents, configurable markets,
-              and workflows for learning and analysis.
+              and workflows for learning and analysis. The ASSUME project was funded by the <strong>Federal Ministry for Economic Affairs and Climate Action (BMWK)</strong>.
             </p>
           </div>
 
@@ -109,6 +109,9 @@ export function ResearchPage() {
               {copyState === 'copied' ? 'Copied!' : copyState === 'error' ? 'Failed' : 'Copy BibTeX'}
             </Button>
           </div>
+          <p style={{ marginTop: '1rem', fontSize: '0.9rem', color: 'var(--text-secondary)' }}>
+            To cite a specific version, all releases are archived on Zenodo: <a href="https://doi.org/10.5281/zenodo.8088760" style={{ color: 'var(--brand-primary)' }} target="_blank" rel="noopener noreferrer">DOI: 10.5281/zenodo.8088760</a>
+          </p>
         </div>
 
         <h3 style={{ fontSize: '1.75rem', marginBottom: '1.5rem' }}>Related Publications (Use Cases)</h3>
