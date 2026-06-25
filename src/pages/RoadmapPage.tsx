@@ -6,7 +6,7 @@ const milestones = [
     year: '2022-2025',
     title: 'ASSUME Project',
     status: 'completed',
-    description: 'Establishment of the core agent-based simulation framework, integration of deep reinforcement learning, and development of initial market setups.'
+    description: 'Establishment of the core agent-based simulation framework, integration of deep reinforcement learning and development of initial market setups.'
   },
   {
     year: '2025',

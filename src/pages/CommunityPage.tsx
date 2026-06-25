@@ -14,7 +14,7 @@ const team = [
     id: 'raskob',
     name: 'Jannik Raskob',
     meta: 'FH Aachen - University of Applied Sciences',
-    bio: 'PhD student working with agentic AI, ASSUME GUI, and ontologies.',
+    bio: 'PhD student working with agentic AI, ASSUME GUI and ontologies.',
     initials: 'JR'
   },
   {
@@ -28,7 +28,7 @@ const team = [
     id: 'miskiw',
     name: 'Kim K. Miskiw',
     meta: 'WIN - IM, KIT',
-    bio: 'Research interests include deep reinforcement learning in electricity market simulations, agent-based electricity market modeling, energy market engineering, and stochastic optimization.',
+    bio: 'Research interests include deep reinforcement learning in electricity market simulations, agent-based electricity market modeling, energy market engineering and stochastic optimization.',
     initials: 'KM',
     image: '/img/people/kim-k-miskiw.png'
   },
@@ -59,7 +59,7 @@ const team = [
     id: 'patil',
     name: 'Parag Patil',
     meta: 'Fraunhofer IEG',
-    bio: 'Demand-side flexibility modeling, hydrogen-based steel production pathways, and infrastructure modeling.',
+    bio: 'Demand-side flexibility modeling, hydrogen-based steel production pathways and infrastructure modeling.',
     initials: 'PP'
   },
   {

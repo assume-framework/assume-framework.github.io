@@ -61,7 +61,7 @@ export function ToolboxPage() {
           <PlayCircle color="var(--brand-primary)" /> Interactive Tutorials
         </h2>
         <p style={{ color: 'var(--text-secondary)', marginBottom: '2rem', maxWidth: '700px' }}>
-          Get started immediately with our Google Colab notebooks. Learn how to configure new units, adapt RL algorithms, and simulate storage operators without setting up a local environment.
+          Get started immediately with our Google Colab notebooks. Learn how to configure new units, adapt RL algorithms and simulate storage operators without setting up a local environment.
         </p>
         <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
           <Button variant="outline" href="https://colab.research.google.com/github/assume-framework/assume/blob/main/examples/notebooks/03_custom_unit_example.ipynb" target="_blank" rel="noopener noreferrer">Custom Unit Example</Button>

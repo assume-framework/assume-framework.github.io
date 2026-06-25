@@ -33,7 +33,7 @@ export function ResearchPage() {
       <header style={{ marginBottom: '4rem', maxWidth: '800px' }}>
         <h1 style={{ fontSize: '3rem', marginBottom: '1rem', letterSpacing: '-0.02em' }}>Research & Applications</h1>
         <p style={{ fontSize: '1.25rem', color: 'var(--text-secondary)' }}>
-          The academic foundation, funded research projects, and scientific use cases powered by the ASSUME ecosystem.
+          The academic foundation, funded research projects and scientific use cases powered by the ASSUME ecosystem.
         </p>
       </header>
 
@@ -47,7 +47,7 @@ export function ResearchPage() {
             <p style={{ color: 'var(--text-secondary)', lineHeight: 1.7, marginBottom: '1rem' }}>
               The <strong>ASSUME</strong> collaborative research project (2022-2025) produced the open-source ASSUME toolbox: an
               agent-based simulation environment for electricity markets that uses deep reinforcement learning (DRL) for participant
-              strategies where appropriate. Partners delivered the core software, examples, documentation, and community channels; the
+              strategies where appropriate. Partners delivered the core software, examples, documentation and community channels; the
               code remains publicly available and continues to evolve.
             </p>
             <p style={{ color: 'var(--text-secondary)', lineHeight: 1.7 }}>
@@ -60,7 +60,7 @@ export function ResearchPage() {
             <h3 style={{ fontSize: '1.75rem', marginBottom: '1rem' }}>ADAPT project (2025-2028)</h3>
             <p style={{ color: 'var(--text-secondary)', lineHeight: 1.7, marginBottom: '1rem' }}>
               The accelerating energy transition and growing complexity of electricity markets challenge market participants, grid
-              operators, and regulators. Understanding stakeholder interaction and the effects of market or regulatory change needs
+              operators and regulators. Understanding stakeholder interaction and the effects of market or regulatory change needs
               methods that capture intricate relationships - something traditional models often simplify too far. Developments such as
               reforms to grid-tariff structures and the design of capacity markets must keep supply reliable, reward flexibility, and
               encourage investment in the right places.
@@ -68,12 +68,12 @@ export function ResearchPage() {
             <p style={{ color: 'var(--text-secondary)', lineHeight: 1.7, marginBottom: '1rem' }}>
               <strong>ADAPT</strong> (Adaptive AI-supported Simulation Toolbox for Energy Market Design) responds to that need. It
               develops a user-friendly, adaptive simulation platform built on deep reinforcement learning. The work builds on the existing
-              ASSUME framework: ASSUME already provides a strong technical base for market-design studies, and ADAPT extends it in three directions:
+              ASSUME framework: ASSUME already provides a strong technical base for market-design studies and ADAPT extends it in three directions:
             </p>
             <ul style={{ color: 'var(--text-secondary)', lineHeight: 1.7, marginLeft: '1.5rem', display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
               <li>
                 <strong>Adaptive market agent</strong> - An AI-driven agent representing the regulator or market-design authority. It can
-                adjust market rules and parameters, observe how participants react, and learn how to improve design over time.
+                adjust market rules and parameters, observe how participants react and learn how to improve design over time.
               </li>
               <li>
                 <strong>Low-code RL toolbox with explainable results</strong> - A low-code reinforcement-learning interface and front end
@@ -81,7 +81,7 @@ export function ResearchPage() {
               </li>
               <li>
                 <strong>Local grids and sector coupling</strong> - The modelling scope extends to distribution networks, local energy
-                systems, and cross-sector links. That lets downstream actors explore congestion management and incentive schemes.
+                systems and cross-sector links. That lets downstream actors explore congestion management and incentive schemes.
               </li>
             </ul>
           </div>
@@ -118,12 +118,12 @@ export function ResearchPage() {
         <ul style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem', listStyle: 'none', padding: 0 }}>
           <li style={{ padding: '1.5rem', border: '1px solid var(--border-color)', borderRadius: 'var(--radius-md)' }}>
              <p style={{ margin: '0 0 0.5rem 0', fontWeight: 600 }}>Fit for purpose: Modeling wholesale electricity markets realistically with multi-agent deep reinforcement learning</p>
-             <p style={{ margin: '0 0 0.5rem 0', color: 'var(--text-secondary)', fontSize: '0.9rem' }}>Nick Harder, Ramiz Qussous, and Anke Weidlich - Energy and AI, Volume 14, 2023</p>
+             <p style={{ margin: '0 0 0.5rem 0', color: 'var(--text-secondary)', fontSize: '0.9rem' }}>Nick Harder, Ramiz Qussous and Anke Weidlich - Energy and AI, Volume 14, 2023</p>
              <a href="https://doi.org/10.1016/j.egyai.2023.100295" style={{ color: 'var(--brand-primary)', fontWeight: 500 }} target="_blank" rel="noopener noreferrer">DOI Link</a>
           </li>
           <li style={{ padding: '1.5rem', border: '1px solid var(--border-color)', borderRadius: 'var(--radius-md)' }}>
              <p style={{ margin: '0 0 0.5rem 0', fontWeight: 600 }}>Finding individual strategies for storage units in electricity market models using deep reinforcement learning</p>
-             <p style={{ margin: '0 0 0.5rem 0', color: 'var(--text-secondary)', fontSize: '0.9rem' }}>Nick Harder, Anke Weidlich, and Philipp Staudt - Energy Inform 6 (Suppl 1), 41, 2023</p>
+             <p style={{ margin: '0 0 0.5rem 0', color: 'var(--text-secondary)', fontSize: '0.9rem' }}>Nick Harder, Anke Weidlich and Philipp Staudt - Energy Inform 6 (Suppl 1), 41, 2023</p>
              <a href="https://doi.org/10.1186/s42162-023-00293-0" style={{ color: 'var(--brand-primary)', fontWeight: 500 }} target="_blank" rel="noopener noreferrer">DOI Link</a>
           </li>
           <li style={{ padding: '1.5rem', border: '1px solid var(--border-color)', borderRadius: 'var(--radius-md)' }}>
@@ -138,22 +138,22 @@ export function ResearchPage() {
           </li>
           <li style={{ padding: '1.5rem', border: '1px solid var(--border-color)', borderRadius: 'var(--radius-md)' }}>
              <p style={{ margin: '0 0 0.5rem 0', fontWeight: 600 }}>Modeling Participation of Storage Units in Electricity Markets using Multi-Agent Deep Reinforcement Learning</p>
-             <p style={{ margin: '0 0 0.5rem 0', color: 'var(--text-secondary)', fontSize: '0.9rem' }}>Nick Harder, Anke Weidlich, and Philipp Staudt - e-Energy ’23</p>
+             <p style={{ margin: '0 0 0.5rem 0', color: 'var(--text-secondary)', fontSize: '0.9rem' }}>Nick Harder, Anke Weidlich and Philipp Staudt - e-Energy ’23</p>
              <a href="https://doi.org/10.1145/3575813.3597351" style={{ color: 'var(--brand-primary)', fontWeight: 500 }} target="_blank" rel="noopener noreferrer">DOI Link</a>
           </li>
           <li style={{ padding: '1.5rem', border: '1px solid var(--border-color)', borderRadius: 'var(--radius-md)' }}>
              <p style={{ margin: '0 0 0.5rem 0', fontWeight: 600 }}>Economic Evaluation of Electricity and Hydrogen-Based Steel Production Pathways: Leveraging Market Dynamics and Grid Congestion Mitigation through Demand Side Flexibility.</p>
-             <p style={{ margin: '0 0 0.5rem 0', color: 'var(--text-secondary)', fontSize: '0.9rem' }}>Manish Khanra, Parag Patil, Marian Klobasa, and Daniel Scholz - EEM 2024</p>
+             <p style={{ margin: '0 0 0.5rem 0', color: 'var(--text-secondary)', fontSize: '0.9rem' }}>Manish Khanra, Parag Patil, Marian Klobasa and Daniel Scholz - EEM 2024</p>
              <a href="https://doi.org/10.1109/EEM60825.2024.10608890" style={{ color: 'var(--brand-primary)', fontWeight: 500 }} target="_blank" rel="noopener noreferrer">DOI Link</a>
           </li>
           <li style={{ padding: '1.5rem', border: '1px solid var(--border-color)', borderRadius: 'var(--radius-md)' }}>
              <p style={{ margin: '0 0 0.5rem 0', fontWeight: 600 }}>Know Your Tools - A Comparison of Open-Source Energy Market Simulation Models.</p>
-             <p style={{ margin: '0 0 0.5rem 0', color: 'var(--text-secondary)', fontSize: '0.9rem' }}>Florian Maurer, Felix Nitsch, Johannes Kochems, Christoph Schimeczek, Volker Sander, and Sebastian Lehnhoff - EEM 2024</p>
+             <p style={{ margin: '0 0 0.5rem 0', color: 'var(--text-secondary)', fontSize: '0.9rem' }}>Florian Maurer, Felix Nitsch, Johannes Kochems, Christoph Schimeczek, Volker Sander and Sebastian Lehnhoff - EEM 2024</p>
              <a href="https://doi.org/10.1109/EEM60825.2024.10609021" style={{ color: 'var(--brand-primary)', fontWeight: 500 }} target="_blank" rel="noopener noreferrer">DOI Link</a>
           </li>
           <li style={{ padding: '1.5rem', border: '1px solid var(--border-color)', borderRadius: 'var(--radius-md)' }}>
              <p style={{ margin: '0 0 0.5rem 0', fontWeight: 600 }}>Do Block Orders Matter? Impact of Regular Block and Linked Orders on Electricity Market Simulation Outcomes.</p>
-             <p style={{ margin: '0 0 0.5rem 0', color: 'var(--text-secondary)', fontSize: '0.9rem' }}>Johanna Adams, Nick Harder, and Anke Weidlich - EEM 2024</p>
+             <p style={{ margin: '0 0 0.5rem 0', color: 'var(--text-secondary)', fontSize: '0.9rem' }}>Johanna Adams, Nick Harder and Anke Weidlich - EEM 2024</p>
              <a href="https://doi.org/10.1109/EEM60825.2024.10608956" style={{ color: 'var(--brand-primary)', fontWeight: 500 }} target="_blank" rel="noopener noreferrer">DOI Link</a>
           </li>
           <li style={{ padding: '1.5rem', border: '1px solid var(--border-color)', borderRadius: 'var(--radius-md)' }}>

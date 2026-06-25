@@ -6,7 +6,7 @@ export function FAQPage() {
       <header className="page-header">
         <h1 className="page-title">Frequently Asked Questions</h1>
         <p className="page-subtitle">
-          Answers to common questions about the ASSUME framework, terminology, and modeling concepts.
+          Answers to common questions about the ASSUME framework, terminology and modeling concepts.
         </p>
       </header>
 
@@ -36,7 +36,7 @@ export function FAQPage() {
         <section className="faq-item">
           <h2>What are "Zonal clearing" and "NTCs"?</h2>
           <p>
-            European electricity markets are primarily split into bidding zones (Zonal Clearing). <strong>NTCs</strong> (Net Transfer Capacities) define the maximum power exchange limits between these zones. ASSUME utilizes the <strong>PyPSA</strong> library to calculate network-based market clearing, allowing for realistic modeling of congestion management, re-dispatch, and cross-border power flows.
+            European electricity markets are primarily split into bidding zones (Zonal Clearing). <strong>NTCs</strong> (Net Transfer Capacities) define the maximum power exchange limits between these zones. ASSUME utilizes the <strong>PyPSA</strong> library to calculate network-based market clearing, allowing for realistic modeling of congestion management, re-dispatch and cross-border power flows.
           </p>
         </section>
 

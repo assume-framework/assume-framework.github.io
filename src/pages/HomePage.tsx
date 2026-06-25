@@ -13,7 +13,7 @@ export function HomePage() {
           <span className="hero-highlight">Simulation Toolbox</span>
         </h1>
         <p className="hero-subtitle">
-          Explore the future of energy markets with deep reinforcement learning, sector coupling, and adaptive AI architectures.
+          Explore the future of energy markets with deep reinforcement learning, sector coupling and adaptive AI architectures.
         </p>
         <div className="hero-actions">
           <Button variant="primary" to="/toolbox">Get Started</Button>
@@ -41,7 +41,7 @@ export function HomePage() {
         <div style={{ textAlign: 'center', marginBottom: '3rem' }}>
           <h2 style={{ fontSize: '2.5rem', marginBottom: '1rem' }}>Results in Action</h2>
           <p style={{ fontSize: '1.2rem', color: 'var(--text-secondary)', maxWidth: '800px', margin: '0 auto', lineHeight: 1.6 }}>
-            ASSUME has been used to solve real-world market design problems, such as evaluating industrial demand-side flexibility, analyzing learning storage operators, and modeling congestion management. 
+            ASSUME has been used to solve real-world market design problems, such as evaluating industrial demand-side flexibility, analyzing learning storage operators and modeling congestion management. 
             The ecosystem provides built-in integration with <strong>TimescaleDB</strong> and <strong>Grafana</strong> for instant scenario analysis.
           </p>
         </div>
