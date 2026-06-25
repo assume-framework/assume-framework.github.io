@@ -54,6 +54,27 @@ const team = [
     meta: 'Former INATECH CIG',
     bio: 'Former core developer of ASSUME, initial developer of reinforcement learning and project lead of the ASSUME project.',
     initials: 'NH'
+  },
+  {
+    id: 'patil',
+    name: 'Parag Patil',
+    meta: 'Fraunhofer IEG',
+    bio: 'Demand-side flexibility modeling, hydrogen-based steel production pathways, and infrastructure modeling.',
+    initials: 'PP'
+  },
+  {
+    id: 'qussous',
+    name: 'Ramiz Qussous',
+    meta: 'INATECH CIG, University of Freiburg',
+    bio: 'Co-author of ASSUME, wholesale electricity market modeling with multi-agent deep reinforcement learning.',
+    initials: 'RQ'
+  },
+  {
+    id: 'thederan',
+    name: 'Marie Thederan',
+    meta: 'WIN - IM, KIT',
+    bio: 'Market simulation, agent-based electricity market modeling.',
+    initials: 'MT'
   }
 ];
 
@@ -123,6 +144,16 @@ export function CommunityPage() {
             <Mail size={18} /> Email Coordinator
           </Button>
         </div>
+      </section>
+
+      <section style={{ borderTop: '1px solid var(--border-color)', paddingTop: '4rem', marginTop: '4rem' }}>
+        <h2 style={{ fontSize: '2rem', marginBottom: '1.5rem' }}>Contributing</h2>
+        <p style={{ color: 'var(--text-secondary)', marginBottom: '2rem', maxWidth: '600px', lineHeight: 1.6 }}>
+          ASSUME is built for the community. We welcome contributions ranging from new market mechanisms and bidding strategies to bug fixes and documentation improvements.
+        </p>
+        <Button variant="outline" href="https://github.com/assume-framework/assume/blob/main/CONTRIBUTING.md" target="_blank" rel="noopener noreferrer">
+          <GitBranch size={18} /> Contribution Guidelines
+        </Button>
       </section>
     </div>
   );
