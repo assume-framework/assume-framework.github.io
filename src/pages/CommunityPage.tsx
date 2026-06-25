@@ -1,5 +1,6 @@
 import { Mail, GitBranch, MessageSquare, Users } from 'lucide-react';
 import { Button } from '../components/ui/Button';
+import { PageHeader } from "../components/ui/PageHeader";
 
 const team = [
   {
@@ -81,12 +82,7 @@ const team = [
 export function CommunityPage() {
   return (
     <div className="container" style={{ padding: '4rem 0' }}>
-      <header style={{ marginBottom: '4rem', maxWidth: '800px' }}>
-        <h1 style={{ fontSize: '3rem', marginBottom: '1rem', letterSpacing: '-0.02em' }}>Community & Team</h1>
-        <p style={{ fontSize: '1.25rem', color: 'var(--text-secondary)' }}>
-          ASSUME is developed by a collaboration across several institutions.
-        </p>
-      </header>
+      <PageHeader title="Community & Team" subtitle="ASSUME is developed by a collaboration across several institutions." />
 
       <section style={{ marginBottom: '5rem' }}>
         <h2 style={{ fontSize: '2rem', marginBottom: '2rem' }}>Contributing Institutions</h2>

@@ -1,16 +1,12 @@
 import { Database, PlayCircle, BookOpen, Layers, AppWindow } from 'lucide-react';
 import { Button } from '../components/ui/Button';
 import { FeatureCard } from '../components/ui/FeatureCard';
+import { PageHeader } from "../components/ui/PageHeader";
 
 export function ToolboxPage() {
   return (
     <div className="container" style={{ padding: '4rem 0' }}>
-      <header style={{ marginBottom: '4rem', maxWidth: '800px' }}>
-        <h1 style={{ fontSize: '3rem', marginBottom: '1rem', letterSpacing: '-0.02em' }}>The Software Ecosystem</h1>
-        <p style={{ fontSize: '1.25rem', color: 'var(--text-secondary)' }}>
-          An open-source framework for agent-based simulations of European electricity markets, integrating Deep Reinforcement Learning natively.
-        </p>
-      </header>
+      <PageHeader title="The Software Ecosystem" subtitle="An open-source framework for agent-based simulations of European electricity markets, integrating Deep Reinforcement Learning natively." />
 
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '2rem', marginBottom: '4rem' }}>
         

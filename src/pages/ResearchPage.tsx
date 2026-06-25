@@ -1,5 +1,6 @@
 import { useState, useCallback } from 'react';
 import { Button } from '../components/ui/Button';
+import { PageHeader } from "../components/ui/PageHeader";
 
 const ASSUME_BIBTEX = `@article{ASSUME,
   title = {{ASSUME: An agent-based simulation framework for exploring electricity market dynamics with reinforcement learning}},
@@ -30,12 +31,7 @@ export function ResearchPage() {
 
   return (
     <div className="container" style={{ padding: '4rem 0' }}>
-      <header style={{ marginBottom: '4rem', maxWidth: '800px' }}>
-        <h1 style={{ fontSize: '3rem', marginBottom: '1rem', letterSpacing: '-0.02em' }}>Research & Applications</h1>
-        <p style={{ fontSize: '1.25rem', color: 'var(--text-secondary)' }}>
-          The academic foundation, funded research projects and scientific use cases powered by the ASSUME ecosystem.
-        </p>
-      </header>
+      <PageHeader title="Research & Applications" subtitle="The academic foundation, funded research projects and scientific use cases powered by the ASSUME ecosystem." />
 
       {/* Funding Projects */}
       <section style={{ marginBottom: '5rem' }}>

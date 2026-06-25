@@ -1,14 +1,10 @@
 import './pages.css';
+import { PageHeader } from "../components/ui/PageHeader";
 
 export function FAQPage() {
   return (
     <div className="container page-container">
-      <header className="page-header">
-        <h1 className="page-title">Frequently Asked Questions</h1>
-        <p className="page-subtitle">
-          Answers to common questions about the ASSUME framework, terminology and modeling concepts.
-        </p>
-      </header>
+      <PageHeader title="Frequently Asked Questions" subtitle="Answers to common questions about the ASSUME framework, terminology and modeling concepts." />
 
       <div className="faq-list">
         
