@@ -1,0 +1,106 @@
+.page-container {
+  padding: 4rem 0;
+}
+
+.page-header {
+  margin-bottom: 4rem;
+  max-width: 800px;
+}
+
+.page-title {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  letter-spacing: -0.02em;
+}
+
+.page-subtitle {
+  font-size: 1.25rem;
+  color: var(--text-secondary);
+}
+
+.faq-list {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  max-width: 900px;
+}
+
+.faq-item h2 {
+  font-size: 1.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.faq-item p {
+  color: var(--text-secondary);
+  line-height: 1.7;
+}
+
+.roadmap-timeline {
+  position: relative;
+  max-width: 800px;
+}
+
+.roadmap-line {
+  position: absolute;
+  left: 23px;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background-color: var(--border-color);
+}
+
+.roadmap-item {
+  display: flex;
+  gap: 2rem;
+  margin-bottom: 3rem;
+  position: relative;
+}
+
+.roadmap-icon-wrapper {
+  background-color: var(--bg-primary);
+  z-index: 1;
+  margin-top: 0.25rem;
+}
+
+.roadmap-icon {
+  background-color: var(--bg-primary);
+  border-radius: 50%;
+}
+
+.roadmap-icon-empty {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 2px solid var(--border-color);
+  background-color: var(--bg-secondary);
+}
+
+.roadmap-content {
+  flex: 1;
+  padding: 1.5rem;
+  border-radius: var(--radius-md);
+}
+
+.roadmap-content.current {
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+}
+
+.roadmap-year {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--brand-accent);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.roadmap-content h3 {
+  font-size: 1.5rem;
+  margin: 0.5rem 0;
+}
+
+.roadmap-content p {
+  color: var(--text-secondary);
+  margin: 0;
+  line-height: 1.6;
+}

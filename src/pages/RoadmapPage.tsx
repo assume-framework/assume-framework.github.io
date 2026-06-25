@@ -1,4 +1,5 @@
 import { CheckCircle2, CircleDashed } from 'lucide-react';
+import './pages.css';
 
 const milestones = [
   {
@@ -35,34 +36,34 @@ const milestones = [
 
 export function RoadmapPage() {
   return (
-    <div className="container" style={{ padding: '4rem 0' }}>
-      <header style={{ marginBottom: '4rem', maxWidth: '800px' }}>
-        <h1 style={{ fontSize: '3rem', marginBottom: '1rem', letterSpacing: '-0.02em' }}>Project Roadmap</h1>
-        <p style={{ fontSize: '1.25rem', color: 'var(--text-secondary)' }}>
+    <div className="container page-container">
+      <header className="page-header">
+        <h1 className="page-title">Project Roadmap</h1>
+        <p className="page-subtitle">
           Tracking the evolution of the ASSUME toolbox and the upcoming milestones for the ADAPT initiative.
         </p>
       </header>
 
-      <div style={{ position: 'relative', maxWidth: '800px' }}>
+      <div className="roadmap-timeline">
         {/* Timeline Line */}
-        <div style={{ position: 'absolute', left: '23px', top: '0', bottom: '0', width: '2px', backgroundColor: 'var(--border-color)' }} />
+        <div className="roadmap-line" />
 
-        {milestones.map((milestone, idx) => (
-          <div key={idx} style={{ display: 'flex', gap: '2rem', marginBottom: '3rem', position: 'relative' }}>
-            <div style={{ backgroundColor: 'var(--bg-primary)', zIndex: 1, marginTop: '0.25rem' }}>
+        {milestones.map((milestone) => (
+          <div key={milestone.title} className="roadmap-item">
+            <div className="roadmap-icon-wrapper">
               {milestone.status === 'completed' ? (
-                <CheckCircle2 size={48} color="var(--brand-secondary)" style={{ backgroundColor: 'var(--bg-primary)', borderRadius: '50%' }} />
+                <CheckCircle2 size={48} color="var(--brand-secondary)" className="roadmap-icon" />
               ) : milestone.status === 'current' ? (
-                <CircleDashed size={48} color="var(--brand-primary)" style={{ backgroundColor: 'var(--bg-primary)', borderRadius: '50%' }} />
+                <CircleDashed size={48} color="var(--brand-primary)" className="roadmap-icon" />
               ) : (
-                <div style={{ width: '48px', height: '48px', borderRadius: '50%', border: '2px solid var(--border-color)', backgroundColor: 'var(--bg-secondary)' }} />
+                <div className="roadmap-icon-empty" />
               )}
             </div>
             
-            <div style={{ flex: 1, padding: '1.5rem', backgroundColor: milestone.status === 'current' ? 'var(--bg-secondary)' : 'transparent', border: milestone.status === 'current' ? '1px solid var(--border-color)' : 'none', borderRadius: 'var(--radius-md)' }}>
-              <span style={{ fontSize: '0.9rem', fontWeight: 600, color: 'var(--brand-accent)', textTransform: 'uppercase', letterSpacing: '0.05em' }}>{milestone.year}</span>
-              <h3 style={{ fontSize: '1.5rem', margin: '0.5rem 0' }}>{milestone.title}</h3>
-              <p style={{ color: 'var(--text-secondary)', margin: 0, lineHeight: 1.6 }}>{milestone.description}</p>
+            <div className={`roadmap-content ${milestone.status === 'current' ? 'current' : ''}`}>
+              <span className="roadmap-year">{milestone.year}</span>
+              <h3>{milestone.title}</h3>
+              <p>{milestone.description}</p>
             </div>
           </div>
         ))}
