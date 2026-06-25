@@ -67,22 +67,20 @@ export function HomePage() {
         </div>
       </section>
 
-      {/* News Feed Section */}
+      {/* Citing ASSUME */}
       <section className="news-feed">
-        <h2>Latest Updates</h2>
-        <div className="news-list">
-          <div className="news-item">
-            <span className="news-date">October 12, 2025</span>
-            <p className="news-title">ADAPT Project officially launched to build on ASSUME foundation.</p>
-          </div>
-          <div className="news-item">
-            <span className="news-date">August 05, 2025</span>
-            <p className="news-title">New Paper Published: "Evaluating RL Strategies in Sector Coupling."</p>
-          </div>
-          <div className="news-item">
-            <span className="news-date">March 22, 2025</span>
-            <p className="news-title">Version 2.0 of assume-gui released with low-code RL capabilities.</p>
-          </div>
+        <h2>Cite ASSUME</h2>
+        <p style={{ color: 'var(--text-secondary)', marginBottom: '1.5rem', lineHeight: 1.6 }}>
+          If you use ASSUME in your research, please cite the SoftwareX article:
+        </p>
+        <div className="news-item">
+          <p className="news-title" style={{ fontWeight: 600 }}>
+            ASSUME: An agent-based simulation framework for exploring electricity market dynamics with reinforcement learning
+          </p>
+          <p style={{ color: 'var(--text-secondary)', fontSize: '0.9rem', margin: '0.5rem 0' }}>
+            Nick Harder, Kim K. Miskiw, Manish Khanra, Florian Maurer, Parag Patil, Ramiz Qussous, Christof Weinhardt, Marian Klobasa, Mario Ragwitz, Anke Weidlich — <em>SoftwareX</em>, Volume 30, 2025
+          </p>
+          <a href="https://doi.org/10.1016/j.softx.2025.102176" style={{ color: 'var(--brand-primary)', fontWeight: 500 }} target="_blank" rel="noopener noreferrer">DOI: 10.1016/j.softx.2025.102176</a>
         </div>
       </section>
     </div>
