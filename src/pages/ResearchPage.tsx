@@ -84,6 +84,148 @@ export function ResearchPage() {
         </div>
       </section>
 
+      {/* Past Workshops (migrated verbatim from legacy assume-project.de) */}
+      <section id="workshops" style={{ borderTop: '1px solid var(--border-color)', paddingTop: '4rem', marginBottom: '5rem' }}>
+        <style>{`
+          .wk-meta { color: var(--text-secondary); margin: 0.25rem 0; }
+          .wk-subhead { font-size: 1.1rem; margin: 2rem 0 0.75rem; }
+          .wk-body-text { color: var(--text-secondary); line-height: 1.7; margin-bottom: 1rem; }
+          .wk-body-text strong, .wk-meta strong { color: var(--text-primary); }
+          .wk-format { color: var(--text-secondary); line-height: 1.7; margin: 0.5rem 0; padding-left: 1.25rem; }
+          .wk-agenda { border-top: 1px solid var(--border-color); margin-top: 0.5rem; }
+          .wk-agenda-row {
+            display: grid;
+            grid-template-columns: 130px 1fr 200px 80px;
+            gap: 0.5rem 1.5rem;
+            padding: 1rem 0;
+            border-bottom: 1px solid var(--border-color);
+            align-items: start;
+          }
+          .wk-time { font-weight: 600; color: var(--text-primary); font-size: 0.9rem; }
+          .wk-session { color: var(--text-secondary); font-size: 0.95rem; line-height: 1.5; }
+          .wk-session strong { color: var(--text-primary); }
+          .wk-speaker { color: var(--text-secondary); font-size: 0.9rem; }
+          .wk-duration { color: var(--text-muted); font-size: 0.9rem; }
+          @media (max-width: 720px) {
+            .wk-agenda-row { grid-template-columns: 1fr; gap: 0.25rem; padding: 1.15rem 0; }
+          }
+          .wk-details {
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-md);
+            padding: 0 1.5rem;
+            margin-bottom: 1rem;
+            background-color: var(--bg-secondary);
+          }
+          .wk-details > summary {
+            cursor: pointer;
+            padding: 1.25rem 0;
+            font-weight: 600;
+            font-size: 1.05rem;
+            color: var(--text-primary);
+          }
+          .wk-details[open] > summary { border-bottom: 1px solid var(--border-color); }
+          .wk-details .wk-body { padding: 1.25rem 0; }
+          .wk-details .wk-body-text:last-child { margin-bottom: 0; }
+          .wk-lead { color: var(--text-secondary); margin: 0 0 1rem; }
+          .wk-lead strong, .wk-body strong { color: var(--text-primary); }
+          .wk-part-label { font-weight: 600; color: var(--text-primary); margin: 1.25rem 0 0.5rem; }
+        `}</style>
+
+        <h2 style={{ fontSize: '2.5rem', marginBottom: '2rem' }}>Past Workshops</h2>
+
+        <h3 style={{ fontSize: '1.75rem', marginBottom: '1rem' }}>Final Workshop &ndash; Agenda &amp; Session Abstracts</h3>
+        <p className="wk-meta"><strong>Date:</strong> Wednesday, 9 July 2025</p>
+        <p className="wk-meta" style={{ marginBottom: '1.5rem' }}><strong>Format:</strong> Online via Zoom</p>
+
+        <h4 className="wk-subhead">Introduction</h4>
+        <p className="wk-body-text">
+          The transition to high shares of renewable power, coupled with emerging actors and rapidly evolving market rules, calls for tools that can <strong>simulate, stress-test, and help design tomorrow's electricity markets</strong>. <strong>ASSUME</strong> (Agent-Based Electricity Markets Simulation Toolbox) combines agent-based modelling with deep-reinforcement learning to explore adaptive bidding behaviour, sector-coupling, and system-level effects across multiple inter-linked markets.
+        </p>
+        <p className="wk-body-text">
+          This final workshop showcased the toolbox, underlying science, and practical workflows. <strong>Sessions were modular</strong>&mdash;participants were able to join whichever topics interested them&mdash;but at the core was the <strong>Opening Session</strong> for essential context.
+        </p>
+
+        <h4 className="wk-subhead">Session Format</h4>
+        <p className="wk-body-text" style={{ marginBottom: '0.5rem' }}>Each technical session followed a common structure:</p>
+        <p className="wk-format"><strong>20 min &mdash; Scientific presentation</strong> (conference-style deep dive)</p>
+        <p className="wk-format"><strong>70 min &mdash; Hands-on notebook walk-through</strong> using Google Colab to reproduce key results and experiment with the model</p>
+
+        <h4 className="wk-subhead">Agenda Overview</h4>
+        <div className="wk-agenda">
+          <div className="wk-agenda-row">
+            <div className="wk-time">09:00 &ndash; 09:30</div>
+            <div className="wk-session"><strong>Opening Session</strong> &ndash; Importance of simulation tools, project overview, session previews</div>
+            <div className="wk-speaker">Prof. Dr. Anke Weidlich, ASSUME Team</div>
+            <div className="wk-duration">30 min</div>
+          </div>
+          <div className="wk-agenda-row">
+            <div className="wk-time">09:30 &ndash; 11:00</div>
+            <div className="wk-session"><strong>Session 1 &ndash;</strong> Adaptive Behavior in Zero-Marginal-Cost Systems</div>
+            <div className="wk-speaker">Kim Miskiw</div>
+            <div className="wk-duration">90 min</div>
+          </div>
+          <div className="wk-agenda-row">
+            <div className="wk-time">13:00 &ndash; 14:30</div>
+            <div className="wk-session"><strong>Session 2 &ndash;</strong> Demand-Side Management Modeling</div>
+            <div className="wk-speaker">Manish Khanra</div>
+            <div className="wk-duration">90 min</div>
+          </div>
+          <div className="wk-agenda-row">
+            <div className="wk-time">15:00 &ndash; 16:30</div>
+            <div className="wk-session"><strong>Session 3 &ndash;</strong> Redispatch Modelling &amp; Network Integration</div>
+            <div className="wk-speaker">Parag Patil</div>
+            <div className="wk-duration">90 min</div>
+          </div>
+        </div>
+
+        <h4 className="wk-subhead" style={{ marginBottom: '1rem' }}>Session Abstracts</h4>
+
+        <details className="wk-details">
+          <summary>Session 1 &ndash; Adaptive Behavior and Market Dynamics in Zero-Marginal-Cost Energy Systems</summary>
+          <div className="wk-body">
+            <p className="wk-lead"><strong>Lead:</strong> Kim Miskiw (KIT)</p>
+            <p className="wk-part-label">Scientific presentation (20 min)</p>
+            <p className="wk-body-text">
+              The presentation explains why electricity systems with near-zero marginal costs require new analytical approaches to predict bidding behavior and price formation. It outlines the <strong>multi-agent deep-reinforcement-learning</strong> framework implemented in ASSUME and highlights key modelling challenges&mdash;partial observability, non-stationarity, and convergence of competing strategies. Example architectures, including the <strong>centralised-critic/decoupled-actor</strong> setup and <strong>MATD3</strong>, demonstrate scalable solutions. Case-study results illustrate how storage and renewable agents learn profitable bids and how their interaction shapes market prices and system stability.
+            </p>
+            <p className="wk-part-label">Hands-on workshop (70 min)</p>
+            <p className="wk-body-text">
+              Participants split into small teams to build and test bidding strategies for storage and renewable agents in a simplified zero-marginal-cost market. Each team defines the agents' <strong>observation</strong> and <strong>action</strong> spaces, implements them in an interactive Google Colab notebook, and runs multi-agent simulations. Interim results are shared in short peer presentations, followed by instructor feedback. The exercise wraps up with <strong>convergence testing</strong> and visual analysis of <strong>price-duration curves</strong> to assess how learned strategies shape market outcomes and stability.
+            </p>
+          </div>
+        </details>
+
+        <details className="wk-details">
+          <summary>Session 2 &ndash; Industrial Demand-Side Management in ASSUME</summary>
+          <div className="wk-body">
+            <p className="wk-lead"><strong>Lead:</strong> Manish Khanra (Fraunhofer ISI)</p>
+            <p className="wk-part-label">Scientific presentation (20 min)</p>
+            <p className="wk-body-text">
+              This talk shows how ASSUME couples <strong>investment planning</strong> with operational market participation for energy-intensive industries. Using a paper-production plant, it demonstrates an <strong>investment layer</strong> that reflects heterogeneous risk profiles and evaluates retrofit options under uncertainties in CO&#8322; prices, natural-gas prices, renewable availability, and policy incentives. Participants will see how <strong>Flex-Bid</strong> strategies in ancillary-service markets and participation in <strong>Redispatch 3.0</strong> convert inherent flexibility into new revenue streams while reducing CO&#8322; emissions and redispatch costs.
+            </p>
+            <p className="wk-part-label">Hands-on workshop (70 min)</p>
+            <p className="wk-body-text">
+              Attendees configure <strong>Demand-Side Units</strong> for low-temperature heat processes, integrate heat pumps and thermal storage, and link them to multiple markets inside ASSUME. They experiment with Flex-Bid parameters, simulate Redispatch 3.0 participation, and compare risk-adjusted revenues, CO&#8322; savings, and redispatch reductions across various retrofit scenarios.
+            </p>
+          </div>
+        </details>
+
+        <details className="wk-details">
+          <summary>Session 3 &ndash; Redispatch Modelling and Network Integration</summary>
+          <div className="wk-body">
+            <p className="wk-lead"><strong>Lead:</strong> Parag Patil (Fraunhofer IEG)</p>
+            <p className="wk-part-label">Scientific presentation (20 min)</p>
+            <p className="wk-body-text">
+              The presentation examines Germany's growing <strong>grid-congestion</strong> challenge amid rapid renewable expansion. It details methods to locate congestion points, outlines the current redispatch process, and quantifies how escalating renewable penetration drives redispatch volumes and costs. Industrial flexibilities&mdash;such as steel and pulp &amp; paper plants&mdash;are highlighted as <strong>virtual power plants</strong> capable of supplying demand-side relief.
+            </p>
+            <p className="wk-part-label">Hands-on workshop (70 min)</p>
+            <p className="wk-body-text">
+              Participants work through a sequence of <strong>three-node case studies</strong>: (1) baseline redispatch; (2) inclusion of Demand-Side Units; (3) addition of a large industrial flexibility provider. They measure congestion and cost metrics at each stage before scaling to a <strong>Germany-wide network</strong> to evaluate regional redispatch quantities and the system-wide impact of industrial flexibility.
+            </p>
+          </div>
+        </details>
+      </section>
+
       {/* Publications */}
       <section style={{ borderTop: '1px solid var(--border-color)', paddingTop: '4rem' }}>
         <h2 style={{ fontSize: '2.5rem', marginBottom: '2rem' }}>Publications</h2>
