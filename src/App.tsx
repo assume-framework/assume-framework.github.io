@@ -6,6 +6,7 @@ import { ResearchPage } from './pages/ResearchPage';
 import { CommunityPage } from './pages/CommunityPage';
 import { RoadmapPage } from './pages/RoadmapPage';
 import { FAQPage } from './pages/FAQPage';
+import { AboutPage } from './pages/AboutPage';
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
       <Routes>
         <Route element={<SiteLayout />}>
           <Route index element={<HomePage />} />
+          <Route path="about" element={<AboutPage />} />
           <Route path="toolbox" element={<ToolboxPage />} />
           <Route path="research" element={<ResearchPage />} />
           <Route path="roadmap" element={<RoadmapPage />} />
