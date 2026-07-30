@@ -1,0 +1,102 @@
+/* Shared styles for the build-time GitHub data components
+   (GitHubStats, ReleaseFeed). */
+
+.gh-stat-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1rem;
+  margin: 0 0 1.25rem;
+}
+
+.gh-stat {
+  padding: 1.25rem 1.5rem;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  background-color: var(--bg-secondary);
+}
+
+.gh-stat dt {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  margin-bottom: 0.4rem;
+}
+
+.gh-stat dd {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: 2rem;
+  font-weight: 600;
+  line-height: 1.1;
+  color: var(--text-primary);
+}
+
+/* --text-muted would drop below the 4.5:1 contrast minimum at this size on the
+   dark surface, so both use --text-secondary. */
+.gh-stat-meta {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  margin: 0.4rem 0 0;
+}
+
+.gh-caption {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin: 0;
+}
+
+.gh-release-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  border-top: 1px solid var(--border-color);
+}
+
+.gh-release {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  padding: 1.5rem 0;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.gh-release-date {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--brand-primary);
+}
+
+.gh-release-tag {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.gh-release:last-child {
+  border-bottom: none;
+}
+
+.gh-release-summary {
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin: 0;
+  max-width: 70ch;
+}
+
+.gh-link {
+  align-self: flex-start;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--brand-primary);
+}
+
+@media (max-width: 520px) {
+  .gh-stat {
+    padding: 1rem 1.15rem;
+  }
+
+  .gh-stat dd {
+    font-size: 1.6rem;
+  }
+}
