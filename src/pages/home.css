@@ -1,15 +1,22 @@
 .hero-section {
-  padding: 6rem 0;
+  padding: clamp(3rem, 9vw, 6rem) 0;
   text-align: center;
   max-width: 900px;
   margin: 0 auto;
 }
 
 .hero-title {
-  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-size: var(--fs-hero);
   letter-spacing: -0.03em;
   margin-bottom: 1.5rem;
   line-height: 1.1;
+}
+
+/* The manual line break only helps once the headline has room for two lines */
+@media (max-width: 640px) {
+  .hero-title br {
+    display: none;
+  }
 }
 
 .hero-highlight {
@@ -19,9 +26,9 @@
 }
 
 .hero-subtitle {
-  font-size: clamp(1.1rem, 2vw, 1.25rem);
+  font-size: var(--fs-lead);
   color: var(--text-secondary);
-  margin: 0 auto 3rem;
+  margin: 0 auto clamp(2rem, 4vw, 3rem);
   max-width: 700px;
 }
 
@@ -34,16 +41,16 @@
 
 .features-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
-  padding: 4rem 0;
+  grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
+  gap: clamp(1.25rem, 2.5vw, 2rem);
+  padding-bottom: var(--space-section);
 }
 
 .feature-card {
   background-color: var(--bg-secondary);
   border: 1px solid var(--border-color);
   border-radius: var(--radius-md);
-  padding: 2rem;
+  padding: clamp(1.25rem, 3vw, 2rem);
   transition: transform var(--transition-normal), box-shadow var(--transition-normal);
 }
 
@@ -66,7 +73,7 @@
 }
 
 .feature-card h3 {
-  font-size: 1.5rem;
+  font-size: var(--fs-card-title);
   margin-bottom: 0.75rem;
 }
 
@@ -75,37 +82,74 @@
   margin: 0;
 }
 
-.news-feed {
-  padding: 4rem 0;
+/* Centred lead-in above a section */
+.section-intro {
+  text-align: center;
+  margin-bottom: var(--space-block);
+}
+
+.section-intro p {
+  margin: 0 auto;
+  max-width: 65ch;
+}
+
+/* Screenshot showcase — single column until there is room for two */
+.showcase-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(320px, 100%), 1fr));
+  gap: clamp(1.25rem, 2.5vw, 2rem);
+  align-items: start;
+}
+
+.showcase-figure {
+  margin: 0;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-lg);
+  background-color: var(--bg-secondary);
+}
+
+.showcase-figure img {
+  width: 100%;
+  display: block;
+}
+
+.home-cite {
+  padding-top: var(--space-section);
   border-top: 1px solid var(--border-color);
-  margin-top: 2rem;
 }
 
-.news-feed h2 {
-  font-size: 2rem;
-  margin-bottom: 2rem;
+.home-cite h2 {
+  font-size: var(--fs-section);
+  margin-bottom: 1rem;
 }
 
-.news-item {
+.cite-entry {
   display: flex;
   flex-direction: column;
-  padding: 1.5rem 0;
-  border-bottom: 1px solid var(--border-color);
+  gap: 0.5rem;
+  padding: clamp(1.25rem, 3vw, 1.75rem);
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
 }
 
-.news-item:last-child {
-  border-bottom: none;
-}
-
-.news-date {
-  font-size: 0.875rem;
-  color: var(--brand-primary);
-  font-weight: 600;
-  margin-bottom: 0.25rem;
-}
-
-.news-title {
-  font-size: 1.25rem;
+.cite-title {
+  font-size: var(--fs-card-title);
+  font-family: var(--font-display);
   font-weight: 600;
   margin: 0;
+}
+
+.cite-authors {
+  color: var(--text-secondary);
+  font-size: var(--fs-small);
+  margin: 0;
+}
+
+.cite-link {
+  align-self: flex-start;
+  font-weight: 600;
+  overflow-wrap: anywhere;
 }

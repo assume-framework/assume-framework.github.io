@@ -2,6 +2,7 @@ import { Mail, GitBranch, MessageSquare, Users } from 'lucide-react';
 import { Button } from '../components/ui/Button';
 import { GitHubStats } from '../components/ui/GitHubStats';
 import { PageHeader } from "../components/ui/PageHeader";
+import './pages.css';
 
 const team = [
   {
@@ -83,12 +84,12 @@ const team = [
 
 export function CommunityPage() {
   return (
-    <div className="container" style={{ padding: '4rem 0' }}>
+    <div className="container page-container">
       <PageHeader title="Community & Team" subtitle="ASSUME is developed by a collaboration across several institutions." />
 
-      <section style={{ marginBottom: '5rem' }}>
-        <h2 style={{ fontSize: '2rem', marginBottom: '2rem' }}>Contributing Institutions</h2>
-        <ul style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '1rem', listStyle: 'none', padding: 0 }}>
+      <section className="section">
+        <h2 className="section-title">Contributing Institutions</h2>
+        <ul className="inst-grid">
           {[
             { name: 'INATECH CIG, University of Freiburg', url: 'https://www.inatech.uni-freiburg.de/en/chairs/computational-economics' },
             { name: 'WIN - IM, Karlsruhe Institute of Technology (KIT)', url: 'https://im.iism.kit.edu/' },
@@ -96,8 +97,8 @@ export function CommunityPage() {
             { name: 'Fraunhofer ISI', url: 'https://www.isi.fraunhofer.de/' },
             { name: 'Fraunhofer IEG', url: 'https://www.ieg.fraunhofer.de/' }
           ].map(inst => (
-            <li key={inst.name} style={{ padding: '1.5rem', backgroundColor: 'var(--bg-secondary)', border: '1px solid var(--border-color)', borderRadius: 'var(--radius-sm)', fontWeight: 500 }}>
-              <a href={inst.url} target="_blank" rel="noopener noreferrer" style={{ color: 'inherit', textDecoration: 'none', display: 'block', width: '100%', height: '100%' }}>
+            <li key={inst.name} className="inst-card">
+              <a href={inst.url} target="_blank" rel="noopener noreferrer">
                 {inst.name}
               </a>
             </li>
@@ -105,56 +106,50 @@ export function CommunityPage() {
         </ul>
       </section>
 
-      <section style={{ marginBottom: '5rem' }}>
-        <h2 style={{ fontSize: '2rem', marginBottom: '2rem' }}>Team & Contributors</h2>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(320px, 1fr))', gap: '2rem' }}>
+      <section className="section">
+        <h2 className="section-title">Team & Contributors</h2>
+        <div className="team-grid">
           {team.map(member => (
-            <div key={member.id} style={{ display: 'flex', gap: '1.5rem', padding: '1.5rem', border: '1px solid var(--border-color)', borderRadius: 'var(--radius-md)' }}>
+            <div key={member.id} className="team-card">
               {member.image ? (
-                <img 
-                  src={member.image} 
-                  alt={member.name} 
-                  style={{ width: '48px', height: '48px', flexShrink: 0, borderRadius: '50%', objectFit: 'cover', border: '1px solid var(--border-color)' }}
-                />
+                <img src={member.image} alt={member.name} className="team-avatar" />
               ) : (
-                <div style={{ width: '48px', height: '48px', flexShrink: 0, backgroundColor: 'var(--bg-tertiary)', display: 'flex', alignItems: 'center', justifyContent: 'center', borderRadius: '50%', fontWeight: 600, color: 'var(--brand-primary)' }}>
-                  {member.initials}
-                </div>
+                <div className="team-initials" aria-hidden="true">{member.initials}</div>
               )}
-              <div>
-                <h3 style={{ fontSize: '1.1rem', marginBottom: '0.25rem' }}>{member.name}</h3>
-                <p style={{ fontSize: '0.85rem', color: 'var(--brand-accent)', fontWeight: 600, marginBottom: '0.75rem' }}>{member.meta}</p>
-                <p style={{ fontSize: '0.9rem', color: 'var(--text-secondary)', margin: 0, lineHeight: 1.5 }}>{member.bio}</p>
+              <div className="team-body">
+                <h3 className="team-name">{member.name}</h3>
+                <p className="team-meta">{member.meta}</p>
+                <p className="team-bio">{member.bio}</p>
               </div>
             </div>
           ))}
         </div>
       </section>
 
-      <section style={{ borderTop: '1px solid var(--border-color)', paddingTop: '4rem' }}>
-        <h2 style={{ fontSize: '2rem', marginBottom: '1.5rem' }}>Get in Touch</h2>
-        <p style={{ color: 'var(--text-secondary)', marginBottom: '2rem', maxWidth: '600px' }}>
+      <section className="section section-divided">
+        <h2 className="section-title">Get in Touch</h2>
+        <p className="prose" style={{ marginBottom: '2rem' }}>
           Have questions or want to collaborate? The best way to reach us is through our Matrix channel, opening an issue on GitHub, or asking on the OpenMod Discourse forum.
         </p>
-        <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
-          <Button variant="primary" style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }} href="https://matrix.to/#/#assume-framework:matrix.org" target="_blank" rel="noopener noreferrer">
+        <div className="btn-row">
+          <Button variant="primary" href="https://matrix.to/#/#assume-framework:matrix.org" target="_blank" rel="noopener noreferrer">
             <MessageSquare size={18} /> Join Matrix Chat
           </Button>
-          <Button variant="outline" style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }} href="https://forum.openmod.org/" target="_blank" rel="noopener noreferrer">
+          <Button variant="outline" href="https://forum.openmod.org/" target="_blank" rel="noopener noreferrer">
             <Users size={18} /> OpenMod Forum
           </Button>
-          <Button variant="outline" style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }} href="https://github.com/assume-framework/assume/issues" target="_blank" rel="noopener noreferrer">
+          <Button variant="outline" href="https://github.com/assume-framework/assume/issues" target="_blank" rel="noopener noreferrer">
             <GitBranch size={18} /> GitHub Issues
           </Button>
-          <Button variant="outline" style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }} href="mailto:gunter.grimm@inatech.uni-freiburg.de">
+          <Button variant="outline" href="mailto:gunter.grimm@inatech.uni-freiburg.de">
             <Mail size={18} /> Email Coordinator
           </Button>
         </div>
       </section>
 
-      <section style={{ borderTop: '1px solid var(--border-color)', paddingTop: '4rem', marginTop: '4rem' }}>
-        <h2 style={{ fontSize: '2rem', marginBottom: '1.5rem' }}>Contributing</h2>
-        <p style={{ color: 'var(--text-secondary)', marginBottom: '2rem', maxWidth: '600px', lineHeight: 1.6 }}>
+      <section className="section section-divided">
+        <h2 className="section-title">Contributing</h2>
+        <p className="prose" style={{ marginBottom: '2rem' }}>
           ASSUME is built for the community. We welcome contributions ranging from new market mechanisms and bidding strategies to bug fixes and documentation improvements.
         </p>
         <Button variant="outline" href="https://github.com/assume-framework/assume/blob/main/CONTRIBUTING.md" target="_blank" rel="noopener noreferrer">
@@ -162,8 +157,8 @@ export function CommunityPage() {
         </Button>
       </section>
 
-      <section style={{ borderTop: '1px solid var(--border-color)', paddingTop: '4rem', marginTop: '4rem' }}>
-        <h2 style={{ fontSize: '2rem', marginBottom: '1.5rem' }}>The Repository in Numbers</h2>
+      <section className="section section-divided">
+        <h2 className="section-title">The Repository in Numbers</h2>
         <GitHubStats />
       </section>
     </div>

@@ -3,6 +3,16 @@ import { Menu, X } from 'lucide-react';
 import { useState } from 'react';
 import './layout.css';
 
+// Single source of truth so the desktop and mobile menus can never drift apart.
+const navItems = [
+  { to: '/about', label: 'About us' },
+  { to: '/toolbox', label: 'Toolbox' },
+  { to: '/research', label: 'Research' },
+  { to: '/roadmap', label: 'Roadmap' },
+  { to: '/faq', label: 'FAQ' },
+  { to: '/community', label: 'Community' }
+];
+
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -16,29 +26,42 @@ export function Navbar() {
         </Link>
 
         {/* Desktop Nav */}
-        <nav className="desktop-nav">
-          <NavLink to="/about" className={({isActive}) => isActive ? "nav-link active" : "nav-link"}>About us</NavLink>
-          <NavLink to="/toolbox" className={({isActive}) => isActive ? "nav-link active" : "nav-link"}>Toolbox</NavLink>
-          <NavLink to="/research" className={({isActive}) => isActive ? "nav-link active" : "nav-link"}>Research</NavLink>
-          <NavLink to="/roadmap" className={({isActive}) => isActive ? "nav-link active" : "nav-link"}>Roadmap</NavLink>
-          <NavLink to="/faq" className={({isActive}) => isActive ? "nav-link active" : "nav-link"}>FAQ</NavLink>
-          <NavLink to="/community" className={({isActive}) => isActive ? "nav-link active" : "nav-link"}>Community</NavLink>
+        <nav className="desktop-nav" aria-label="Main navigation">
+          {navItems.map((item) => (
+            <NavLink
+              key={item.to}
+              to={item.to}
+              className={({ isActive }) => (isActive ? 'nav-link active' : 'nav-link')}
+            >
+              {item.label}
+            </NavLink>
+          ))}
         </nav>
 
         {/* Mobile Nav Toggle */}
-        <button className="mobile-toggle" onClick={toggleMenu} aria-label="Toggle Menu">
+        <button
+          className="mobile-toggle"
+          onClick={toggleMenu}
+          aria-label={isOpen ? 'Close menu' : 'Open menu'}
+          aria-expanded={isOpen}
+          aria-controls="mobile-nav"
+        >
           {isOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
 
         {/* Mobile Nav */}
         {isOpen && (
-          <nav className="mobile-nav">
-            <NavLink to="/about" onClick={toggleMenu}>About us</NavLink>
-            <NavLink to="/toolbox" onClick={toggleMenu}>Toolbox</NavLink>
-            <NavLink to="/research" onClick={toggleMenu}>Research</NavLink>
-            <NavLink to="/roadmap" onClick={toggleMenu}>Roadmap</NavLink>
-            <NavLink to="/faq" onClick={toggleMenu}>FAQ</NavLink>
-            <NavLink to="/community" onClick={toggleMenu}>Community</NavLink>
+          <nav id="mobile-nav" className="mobile-nav" aria-label="Main navigation">
+            {navItems.map((item) => (
+              <NavLink
+                key={item.to}
+                to={item.to}
+                onClick={toggleMenu}
+                className={({ isActive }) => (isActive ? 'active' : undefined)}
+              >
+                {item.label}
+              </NavLink>
+            ))}
           </nav>
         )}
       </div>

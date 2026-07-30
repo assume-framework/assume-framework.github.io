@@ -10,23 +10,25 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 4.5rem;
+  gap: 1rem;
+  height: var(--header-height);
 }
 
 .brand {
   display: flex;
   align-items: center;
+  min-width: 0;
 }
 
 .brand-logo {
-  height: 48px;
+  height: clamp(34px, 7vw, 44px);
   width: auto;
-  /* Using mix-blend-mode for the logo over backgrounds if needed, but it has a white background */
+  display: block;
 }
 
 @media (prefers-color-scheme: dark) {
   .brand-logo {
-    /* Slight invert or brightness adjustment if needed for dark mode, 
+    /* Slight invert or brightness adjustment if needed for dark mode,
        but keeping original colors usually looks fine for logos. */
     border-radius: var(--radius-sm);
   }
@@ -34,10 +36,12 @@
 
 .desktop-nav {
   display: none;
-  gap: 2rem;
+  align-items: center;
+  gap: clamp(1rem, 2.2vw, 2rem);
 }
 
-@media (min-width: 768px) {
+/* The nav needs the full label row before it fits next to the logo */
+@media (min-width: 900px) {
   .desktop-nav {
     display: flex;
   }
@@ -45,6 +49,8 @@
 
 .nav-link {
   font-weight: 500;
+  font-size: 0.975rem;
+  white-space: nowrap;
   color: var(--text-secondary);
   position: relative;
   transition: color var(--transition-fast);
@@ -59,14 +65,19 @@
 }
 
 .mobile-toggle {
-  display: flex;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  margin-right: -0.5rem;
   background: none;
   border: none;
   color: var(--text-primary);
   cursor: pointer;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 900px) {
   .mobile-toggle {
     display: none;
   }
@@ -74,38 +85,64 @@
 
 .mobile-nav {
   position: absolute;
-  top: 4.5rem;
+  top: var(--header-height);
   left: 0;
   width: 100%;
   background-color: var(--bg-primary);
   border-bottom: 1px solid var(--border-color);
+  box-shadow: var(--shadow-md);
   display: flex;
   flex-direction: column;
-  padding: 1rem 1.5rem;
-  gap: 1rem;
+  padding: 0.5rem var(--container-pad) 1rem;
+  /* Long menus stay reachable on short screens */
+  max-height: calc(100dvh - var(--header-height));
+  overflow-y: auto;
 }
 
 .mobile-nav a {
+  display: flex;
+  align-items: center;
+  min-height: 3rem;
   font-weight: 500;
-  font-size: 1.1rem;
+  font-size: 1.05rem;
   color: var(--text-primary);
   text-decoration: none;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.mobile-nav a:last-child {
+  border-bottom: none;
+}
+
+.mobile-nav a.active {
+  color: var(--brand-primary);
 }
 
 .site-footer {
-  margin-top: 4rem;
-  padding: 3rem 0;
+  margin-top: var(--space-section);
+  padding: var(--space-block) 0;
   border-top: 1px solid var(--border-color);
-  color: var(--text-muted);
+  color: var(--text-secondary);
+  font-size: var(--fs-small);
 }
 
 .footer-inner {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1rem;
+  text-align: center;
+  gap: 0.75rem;
 }
 
 .footer-inner p {
   margin: 0;
+  max-width: 60ch;
+  line-height: 1.6;
+}
+
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem 1.25rem;
 }

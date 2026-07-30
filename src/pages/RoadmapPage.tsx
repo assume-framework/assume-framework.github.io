@@ -37,7 +37,7 @@ const milestones = [
 
 export function RoadmapPage() {
   return (
-    <div className="container page-container">
+    <div className="container page-container page-narrow">
       <PageHeader title="Project Roadmap" subtitle="Tracking the evolution of the ASSUME toolbox and the upcoming milestones for the ADAPT initiative." />
 
       <div className="roadmap-timeline">
