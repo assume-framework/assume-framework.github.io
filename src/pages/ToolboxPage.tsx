@@ -1,7 +1,8 @@
-import { Database, PlayCircle, BookOpen, Layers, AppWindow, ListChecks } from 'lucide-react';
+import { Database, PlayCircle, BookOpen, Layers, AppWindow, ListChecks, Tag } from 'lucide-react';
 import { Button } from '../components/ui/Button';
 import { FeatureCard } from '../components/ui/FeatureCard';
 import { PageHeader } from "../components/ui/PageHeader";
+import { ReleaseFeed } from '../components/ui/ReleaseFeed';
 
 type FeatureStatus = 'implemented' | 'in-progress' | 'planned';
 
@@ -49,8 +50,7 @@ function StatusBadge({ status }: { status: FeatureStatus }) {
   );
 }
 
-// Migrated from the legacy assume-project.de "ASSUME Toolbox" feature table.
-// NOTE: status reflects November 2025 — verify/refresh before publishing.
+// NOTE: status reflects November 2025.
 const featureGroups: FeatureGroup[] = [
   {
     category: 'Markets',
@@ -241,7 +241,7 @@ export function ToolboxPage() {
         </FeatureCard>
       </div>
 
-      {/* Feature Status Matrix (migrated from legacy site) */}
+      {/* Feature Status Matrix */}
       <section id="status" style={{ marginBottom: '4rem' }}>
         <style>{`
           .fm-group { margin-bottom: 2.5rem; }
@@ -291,6 +291,8 @@ export function ToolboxPage() {
         ))}
       </section>
 
+
+
       <section style={{ backgroundColor: 'var(--bg-secondary)', padding: '3rem', borderRadius: 'var(--radius-lg)', border: '1px solid var(--border-color)', marginBottom: '4rem' }}>
         <h2 style={{ marginBottom: '1.5rem', display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
           <PlayCircle color="var(--brand-primary)" /> Interactive Tutorials
@@ -319,6 +321,18 @@ export function ToolboxPage() {
         </div>
       </section>
 
+
+            {/* Releases (collected from the GitHub API at build time) */}
+      <section id="releases" style={{ borderTop: '1px solid var(--border-color)', paddingTop: '4rem', marginBottom: '4rem' }}>
+        <h2 style={{ marginBottom: '1rem', display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
+          <Tag color="var(--brand-primary)" /> Latest Releases
+        </h2>
+        <p style={{ color: 'var(--text-secondary)', marginBottom: '2rem', maxWidth: '700px', lineHeight: 1.6 }}>
+          The toolbox is released as versioned packages, so results can be reproduced against a specific version.
+          Every release is archived on Zenodo with its own DOI.
+        </p>
+        <ReleaseFeed />
+      </section>
       <section style={{ borderTop: '1px solid var(--border-color)', paddingTop: '4rem' }}>
         <h2 style={{ marginBottom: '1.5rem' }}>Documentation & Contributing</h2>
         <p style={{ color: 'var(--text-secondary)', marginBottom: '2rem', maxWidth: '700px' }}>

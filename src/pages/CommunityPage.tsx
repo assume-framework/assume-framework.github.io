@@ -1,5 +1,6 @@
 import { Mail, GitBranch, MessageSquare, Users } from 'lucide-react';
 import { Button } from '../components/ui/Button';
+import { GitHubStats } from '../components/ui/GitHubStats';
 import { PageHeader } from "../components/ui/PageHeader";
 
 const team = [
@@ -159,6 +160,11 @@ export function CommunityPage() {
         <Button variant="outline" href="https://github.com/assume-framework/assume/blob/main/CONTRIBUTING.md" target="_blank" rel="noopener noreferrer">
           <GitBranch size={18} /> Contribution Guidelines
         </Button>
+      </section>
+
+      <section style={{ borderTop: '1px solid var(--border-color)', paddingTop: '4rem', marginTop: '4rem' }}>
+        <h2 style={{ fontSize: '2rem', marginBottom: '1.5rem' }}>The Repository in Numbers</h2>
+        <GitHubStats />
       </section>
     </div>
   );
