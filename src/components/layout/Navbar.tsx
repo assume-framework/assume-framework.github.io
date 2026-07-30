@@ -17,6 +17,7 @@ export function Navbar() {
 
         {/* Desktop Nav */}
         <nav className="desktop-nav">
+          <NavLink to="/about" className={({isActive}) => isActive ? "nav-link active" : "nav-link"}>About us</NavLink>
           <NavLink to="/toolbox" className={({isActive}) => isActive ? "nav-link active" : "nav-link"}>Toolbox</NavLink>
           <NavLink to="/research" className={({isActive}) => isActive ? "nav-link active" : "nav-link"}>Research</NavLink>
           <NavLink to="/roadmap" className={({isActive}) => isActive ? "nav-link active" : "nav-link"}>Roadmap</NavLink>
@@ -32,9 +33,11 @@ export function Navbar() {
         {/* Mobile Nav */}
         {isOpen && (
           <nav className="mobile-nav">
+            <NavLink to="/about" onClick={toggleMenu}>About us</NavLink>
             <NavLink to="/toolbox" onClick={toggleMenu}>Toolbox</NavLink>
             <NavLink to="/research" onClick={toggleMenu}>Research</NavLink>
             <NavLink to="/roadmap" onClick={toggleMenu}>Roadmap</NavLink>
+            <NavLink to="/faq" onClick={toggleMenu}>FAQ</NavLink>
             <NavLink to="/community" onClick={toggleMenu}>Community</NavLink>
           </nav>
         )}
