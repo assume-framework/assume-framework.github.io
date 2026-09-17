@@ -12,6 +12,14 @@ const team = [
     initials: 'GC'
   },
   {
+    id: 'grams',
+    name: 'Julius Grams',
+    meta: 'ESIS, Karlsruhe Institute of Technology (KIT)',
+    bio: 'Research associate and PhD candidate working on the ADAPT project.',
+    initials: 'JG',
+    image: '/img/people/julius-grams.jpg'
+  },
+  {
     id: 'grimm',
     name: 'Gunter Grimm',
     meta: 'INATECH CIG, University of Freiburg',
