@@ -7,7 +7,7 @@
   padding-bottom: var(--space-page);
 }
 
-/* Text-only pages (About, FAQ, Roadmap) are a single reading column. Narrowing
+/* Text-only pages (Roadmap) are a single reading column. Narrowing
    the container centres that column instead of leaving it stranded on the left
    of a wide screen; the inner blocks then span the full column width. */
 .page-narrow {
@@ -23,15 +23,12 @@
 /* The column itself is now the reading measure, so the extra cap on the
    prose would only leave a ragged right edge next to the agenda table. */
 .page-medium .prose,
-.page-medium .prose-stack,
-.page-medium .wk-body-text,
-.page-medium .wk-format {
+.page-medium .prose-stack {
   max-width: none;
 }
 
 .page-narrow .page-header,
 .page-narrow .prose-stack,
-.page-narrow .faq-list,
 .page-narrow .roadmap-timeline {
   max-width: none;
 }
@@ -51,18 +48,6 @@
   font-size: var(--fs-lead);
   color: var(--text-secondary);
   margin: 0;
-}
-
-/* Inline cross-reference link ("… →") */
-.link-arrow {
-  display: inline-block;
-  margin-top: 0.5rem;
-  font-weight: 600;
-  color: var(--text-accent);
-}
-
-.link-arrow:hover {
-  color: var(--brand-primary);
 }
 
 /* Stack of body paragraphs */
@@ -91,33 +76,6 @@
   gap: 0.75rem;
   margin: 0;
   padding-left: 1.25rem;
-}
-
-/* FAQ --------------------------------------------------------------------- */
-
-.faq-list {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  max-width: 900px;
-}
-
-.faq-item {
-  padding: clamp(1.25rem, 3vw, 1.75rem);
-  border: 1px solid var(--border-color);
-  border-radius: var(--radius-md);
-  background-color: var(--bg-secondary);
-}
-
-.faq-item h2 {
-  font-size: var(--fs-subsection);
-  margin-bottom: 0.75rem;
-}
-
-.faq-item p {
-  color: var(--text-secondary);
-  line-height: 1.7;
-  margin: 0;
 }
 
 /* Roadmap ----------------------------------------------------------------- */
@@ -198,75 +156,6 @@
   line-height: 1.6;
 }
 
-/* Feature status matrix (Toolbox) ----------------------------------------- */
-
-.fm-group {
-  margin-bottom: var(--space-block);
-}
-
-.fm-group:last-child {
-  margin-bottom: 0;
-}
-
-.fm-group-title {
-  font-size: var(--fs-subsection);
-  margin: 0 0 0.25rem 0;
-}
-
-.fm-table {
-  border-top: 1px solid var(--border-color);
-}
-
-.fm-row {
-  display: grid;
-  grid-template-columns: minmax(180px, 220px) 168px 1fr;
-  gap: 0.75rem 1.5rem;
-  align-items: start;
-  padding: 1rem 0;
-  border-bottom: 1px solid var(--border-color);
-}
-
-.fm-name {
-  font-weight: 600;
-  color: var(--text-primary);
-}
-
-.fm-desc {
-  color: var(--text-secondary);
-  font-size: 0.92rem;
-  line-height: 1.55;
-  margin: 0;
-}
-
-@media (max-width: 860px) {
-  .fm-row {
-    grid-template-columns: 1fr;
-    gap: 0.5rem;
-    padding: 1.15rem 0;
-  }
-}
-
-.status-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  font-size: var(--fs-tiny);
-  font-weight: 600;
-  white-space: nowrap;
-  padding: 0.3rem 0.7rem;
-  border-radius: var(--radius-full);
-  border: 1px solid var(--border-color);
-  background-color: var(--bg-secondary);
-  color: var(--text-primary);
-}
-
-.status-dot {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  flex-shrink: 0;
-}
-
 /* Toolbox cards ----------------------------------------------------------- */
 
 .toolbox-install {
@@ -309,6 +198,34 @@
   gap: var(--space-block);
 }
 
+.workshop-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(260px, 100%), 1fr));
+  gap: clamp(1rem, 2.5vw, 1.5rem);
+  margin-bottom: 2rem;
+}
+
+.workshop-gallery figure {
+  margin: 0;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  border: 1px solid var(--border-color);
+  background-color: var(--bg-secondary);
+}
+
+.workshop-gallery img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  display: block;
+}
+
+.workshop-gallery figcaption {
+  padding: 0.75rem 1rem;
+  font-size: var(--fs-tiny);
+  color: var(--text-secondary);
+}
+
 .wk-meta {
   color: var(--text-secondary);
   margin: 0.25rem 0;
@@ -319,13 +236,10 @@
   margin: var(--space-block) 0 0.75rem;
 }
 
-/* Capped so the workshop prose stays readable on a wide screen instead of
-   running the full 1200px */
 .wk-body-text {
   color: var(--text-secondary);
   line-height: 1.7;
   margin-bottom: 1rem;
-  max-width: var(--measure);
 }
 
 .wk-body-text strong,
@@ -338,7 +252,6 @@
   line-height: 1.7;
   margin: 0.5rem 0;
   padding-left: 1.25rem;
-  max-width: var(--measure);
 }
 
 .wk-agenda {
@@ -495,18 +408,14 @@
   color: var(--text-secondary);
 }
 
-/* Publication list — layout comes from .split-2 so the two do not fight over
-   `display`. */
+/* Publication list — one full-width card per row. */
 .pub-list {
   list-style: none;
   padding: 0;
   margin: 0;
-}
-
-/* Unlike the project cards, publication cards look tidier when a row shares
-   one height — the DOI links then sit on a common baseline. */
-.pub-list.split-2 {
-  align-items: stretch;
+  display: flex;
+  flex-direction: column;
+  gap: clamp(1rem, 2vw, 1.5rem);
 }
 
 .pub-item {
@@ -515,11 +424,6 @@
   padding: clamp(1.15rem, 3vw, 1.5rem);
   border: 1px solid var(--border-color);
   border-radius: var(--radius-md);
-}
-
-/* Pushes the DOI link to the bottom so it lines up across a row of cards */
-.pub-item .pub-link {
-  margin-top: auto;
 }
 
 .pub-title {

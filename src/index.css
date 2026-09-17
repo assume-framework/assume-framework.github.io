@@ -98,7 +98,7 @@
 }
 
 html {
-  /* Keeps anchor targets (e.g. /research#workshops) clear of the sticky header */
+  /* Keeps anchor targets (e.g. /community#workshops) clear of the sticky header */
   scroll-padding-top: calc(var(--header-height) + 1rem);
   scroll-behavior: smooth;
 }
@@ -304,7 +304,6 @@ a:hover {
 .prose,
 .prose-stack > p,
 .prose-stack li,
-.faq-item p,
 .roadmap-content p,
 .wk-body-text,
 .wk-lead {
@@ -341,11 +340,11 @@ a:hover {
 /* Consistent hover feedback for every bordered surface (pointer devices only,
    so cards do not stay "hovered" after a tap on touch screens). */
 @media (hover: hover) {
-  .card, .inst-card, .pub-item, .team-card, .faq-item {
+  .card, .inst-card, .pub-item, .team-card {
     transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
   }
 
-  .card:hover, .inst-card:hover, .pub-item:hover, .team-card:hover, .faq-item:hover {
+  .card:hover, .inst-card:hover, .pub-item:hover, .team-card:hover {
     border-color: var(--brand-secondary);
     box-shadow: var(--shadow-md);
   }

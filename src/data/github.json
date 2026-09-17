@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-07-30T11:59:10.618Z",
+  "generatedAt": "2026-09-17T13:05:50.587Z",
   "repo": {
     "fullName": "assume-framework/assume",
     "url": "https://github.com/assume-framework/assume",
-    "stars": 103,
-    "forks": 44,
-    "contributors": 24,
+    "stars": 113,
+    "forks": 48,
+    "contributors": 25,
     "license": "AGPL-3.0",
     "createdAt": "2023-04-19T09:20:48Z"
   },

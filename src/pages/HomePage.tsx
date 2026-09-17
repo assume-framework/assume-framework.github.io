@@ -1,5 +1,6 @@
 import { Button } from '../components/ui/Button';
 import { FeatureCard } from '../components/ui/FeatureCard';
+import { GitHubStats } from '../components/ui/GitHubStats';
 import { Zap, Network, Lightbulb } from 'lucide-react';
 import './home.css';
 
@@ -34,6 +35,17 @@ export function HomePage() {
         <FeatureCard icon={<Lightbulb size={28} />} title="Adaptive Market-Agents">
           <p>Simulate regulators and market authorities that autonomously tweak rules and observe participant reactions.</p>
         </FeatureCard>
+      </section>
+
+      {/* The Repository in Numbers */}
+      <section className="section">
+        <div className="section-intro">
+          <h2>Built in the Open</h2>
+          <p className="lead">
+            An active open-source community shapes ASSUME release by release &mdash; here&rsquo;s where things stand right now.
+          </p>
+        </div>
+        <GitHubStats />
       </section>
 
       {/* Results in Action Section */}

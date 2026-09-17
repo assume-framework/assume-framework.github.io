@@ -34,17 +34,43 @@
   }
 }
 
-.desktop-nav {
+.nav-right {
   display: none;
   align-items: center;
-  gap: clamp(1rem, 2.2vw, 2rem);
+  gap: clamp(1.25rem, 2.5vw, 2rem);
 }
 
 /* The nav needs the full label row before it fits next to the logo */
 @media (min-width: 900px) {
-  .desktop-nav {
+  .nav-right {
     display: flex;
   }
+}
+
+.desktop-nav {
+  display: flex;
+  align-items: center;
+  gap: clamp(1rem, 2.2vw, 2rem);
+}
+
+.nav-icon-links {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  padding-left: clamp(1.25rem, 2.5vw, 2rem);
+  border-left: 1px solid var(--border-color);
+}
+
+.nav-icon-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-secondary);
+  transition: color var(--transition-fast);
+}
+
+.nav-icon-link:hover {
+  color: var(--brand-primary);
 }
 
 .nav-link {
@@ -116,6 +142,27 @@
 
 .mobile-nav a.active {
   color: var(--brand-primary);
+}
+
+.mobile-nav-icon-links {
+  display: flex;
+  flex-direction: column;
+  padding-top: 0.5rem;
+}
+
+.mobile-nav-icon-links .nav-icon-link {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  min-height: 3rem;
+  font-weight: 500;
+  font-size: 1.05rem;
+  color: var(--text-primary);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.mobile-nav-icon-links .nav-icon-link:last-child {
+  border-bottom: none;
 }
 
 .site-footer {

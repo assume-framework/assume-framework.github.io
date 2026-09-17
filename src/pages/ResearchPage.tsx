@@ -25,21 +25,27 @@ interface Publication {
 
 const publications: Publication[] = [
   {
-    title: 'Fit for purpose: Modeling wholesale electricity markets realistically with multi-agent deep reinforcement learning',
-    meta: 'Nick Harder, Ramiz Qussous and Anke Weidlich - Energy and AI, Volume 14, 2023',
-    url: 'https://doi.org/10.1016/j.egyai.2023.100295',
+    title: 'Decarbonising cement production through electrification and thermal storage: impacts on electricity markets and transmission redispatch',
+    meta: 'Manish Khanra, Parag Patil and Marian Klobasa - Applied Energy, Volume 426, 2026, Article 128666',
+    url: 'https://doi.org/10.1016/j.apenergy.2026.128666',
     linkLabel: 'DOI Link'
   },
   {
-    title: 'Finding individual strategies for storage units in electricity market models using deep reinforcement learning',
-    meta: 'Nick Harder, Anke Weidlich and Philipp Staudt - Energy Inform 6 (Suppl 1), 41, 2023',
-    url: 'https://doi.org/10.1186/s42162-023-00293-0',
+    title: 'A framework for decision making under deep uncertainty in hard-to-abate industries: An application case for investment in a German steel plant',
+    meta: 'Manish Khanra, Marian Klobasa and Parag Patil - Energy Strategy Reviews, Volume 64, 2026, Article 102185',
+    url: 'https://doi.org/10.1016/j.esr.2026.102185',
     linkLabel: 'DOI Link'
   },
   {
-    title: 'Market Abstraction of Energy Markets and Policies - Application in an Agent-Based Modeling Toolbox',
-    meta: 'Florian Maurer, Kim K. Miskiw, Rebeca Ramirez Acosta, Nick Harder, Volker Sander & Sebastian Lehnhoff - Lecture Notes in Computer Science, vol 14468',
-    url: 'http://dx.doi.org/10.1007/978-3-031-48652-4_10',
+    title: 'Comparative Evaluation of Distribution Grid Congestion Management Mechanisms',
+    meta: 'Kim K. Miskiw, Ahmed S. Alahmed, Shannon Y.S. Hwang, Audun Botterud and Philipp Staudt - SSRN Working Paper, 2026',
+    url: 'https://doi.org/10.2139/ssrn.6863778',
+    linkLabel: 'SSRN Link'
+  },
+  {
+    title: 'Enhancing Realism in Day-Ahead Market Bidding: Actor Design in Multi-Agent Deep Reinforcement Learning',
+    meta: 'Marie Thederan, Kim K. Miskiw and Christof Weinhardt - EEM 2026',
+    url: 'https://doi.org/10.1109/EEM68581.2026.11589765',
     linkLabel: 'DOI Link'
   },
   {
@@ -47,12 +53,6 @@ const publications: Publication[] = [
     meta: 'Kim K. Miskiw, Nick Harder and Philipp Staudt - HICSS 2024',
     url: 'https://scholarspace.manoa.hawaii.edu/bitstreams/ab278af7-2dfe-4c36-a538-eaccb8be1262/download',
     linkLabel: 'PDF Link'
-  },
-  {
-    title: 'Modeling Participation of Storage Units in Electricity Markets using Multi-Agent Deep Reinforcement Learning',
-    meta: 'Nick Harder, Anke Weidlich and Philipp Staudt - e-Energy ’23',
-    url: 'https://doi.org/10.1145/3575813.3597351',
-    linkLabel: 'DOI Link'
   },
   {
     title: 'Economic Evaluation of Electricity and Hydrogen-Based Steel Production Pathways: Leveraging Market Dynamics and Grid Congestion Mitigation through Demand Side Flexibility.',
@@ -76,6 +76,30 @@ const publications: Publication[] = [
     title: 'Explainable Deep Reinforcement Learning for Multi-Agent Electricity Market Simulations.',
     meta: 'Kim K. Miskiw and Philipp Staudt - EEM 2024',
     url: 'https://doi.org/10.1109/EEM60825.2024.10608907',
+    linkLabel: 'DOI Link'
+  },
+  {
+    title: 'Fit for purpose: Modeling wholesale electricity markets realistically with multi-agent deep reinforcement learning',
+    meta: 'Nick Harder, Ramiz Qussous and Anke Weidlich - Energy and AI, Volume 14, 2023',
+    url: 'https://doi.org/10.1016/j.egyai.2023.100295',
+    linkLabel: 'DOI Link'
+  },
+  {
+    title: 'Finding individual strategies for storage units in electricity market models using deep reinforcement learning',
+    meta: 'Nick Harder, Anke Weidlich and Philipp Staudt - Energy Inform 6 (Suppl 1), 41, 2023',
+    url: 'https://doi.org/10.1186/s42162-023-00293-0',
+    linkLabel: 'DOI Link'
+  },
+  {
+    title: 'Market Abstraction of Energy Markets and Policies - Application in an Agent-Based Modeling Toolbox',
+    meta: 'Florian Maurer, Kim K. Miskiw, Rebeca Ramirez Acosta, Nick Harder, Volker Sander & Sebastian Lehnhoff - Lecture Notes in Computer Science, vol 14468',
+    url: 'http://dx.doi.org/10.1007/978-3-031-48652-4_10',
+    linkLabel: 'DOI Link'
+  },
+  {
+    title: 'Modeling Participation of Storage Units in Electricity Markets using Multi-Agent Deep Reinforcement Learning',
+    meta: 'Nick Harder, Anke Weidlich and Philipp Staudt - e-Energy ’23',
+    url: 'https://doi.org/10.1145/3575813.3597351',
     linkLabel: 'DOI Link'
   }
 ];
@@ -102,19 +126,31 @@ export function ResearchPage() {
       <section className="section">
         <h2 className="section-title">Funded Projects</h2>
 
+        <p className="prose" style={{ marginBottom: '2rem' }}>
+          The transformation of electricity markets associated with the transition towards high shares of renewable power
+          generation results in the constant development of market mechanisms, increasing sector coupling, and creating new
+          market platforms. Introducing a new market or changing the current market design does, however, affect all other
+          markets and their participants because of their strong interrelation in not necessarily foreseeable ways. This
+          raised the need for tools and simulation models to investigate and understand such complex interplay of markets and
+          predict possible adverse effects and misuse of market power.
+        </p>
+
         <div className="project-list">
           <div>
             <h3 className="subsection-title">ASSUME project (2022-2025)</h3>
             <div className="prose-stack">
               <p>
-                The <strong>ASSUME</strong> collaborative research project (2022-2025) produced the open-source ASSUME toolbox: an
-                agent-based simulation environment for electricity markets that uses deep reinforcement learning (DRL) for participant
-                strategies where appropriate. Partners delivered the core software, examples, documentation and community channels; the
-                code remains publicly available and continues to evolve.
+                The <strong>ASSUME</strong> collaborative research project (2022-2025) produced the open-source ASSUME toolbox: a highly
+                modular, easy-to-use agent-based simulation environment for electricity markets with integrated deep reinforcement learning
+                (DRL) methods for participant strategies where appropriate. Different reinforcement learning algorithms were tested in
+                multi-agent simulations, resulting in promising bidding strategies and the ability to model complex market interactions.
+                Partners delivered the core software, examples, documentation and community channels; the code remains publicly available
+                and continues to evolve.
               </p>
               <p>
                 That phase established the technical foundation used today for market-design studies - modular agents, configurable markets,
-                and workflows for learning and analysis. The ASSUME project was funded by the <strong>Federal Ministry for Economic Affairs and Climate Action (BMWK)</strong>.
+                and workflows for learning and analysis - enabling agile analysis of market designs and bidding strategies of new actors and
+                emerging market dynamics in our fast-changing energy system. The ASSUME project was funded by the <strong>Federal Ministry for Economic Affairs and Energy (BMWE)</strong>.
               </p>
             </div>
           </div>
@@ -137,117 +173,30 @@ export function ResearchPage() {
               <ul>
                 <li>
                   <strong>Adaptive market agent</strong> - An AI-driven agent representing the regulator or market-design authority. It can
-                  adjust market rules and parameters, observe how participants react and learn how to improve design over time.
+                  autonomously tweak market rules and parameters, observe how participants react, and continuously learn how to improve the
+                  design - creating flexible, self-optimising market designs that stay effective in a rapidly changing environment.
                 </li>
                 <li>
-                  <strong>Low-code RL toolbox with explainable results</strong> - A low-code reinforcement-learning interface and front end
-                  make the DRL engine usable for researchers without deep programming expertise. Guided configuration and explainability tools.
+                  <strong>Low-code RL toolbox with explainable results</strong> - A low-code reinforcement-learning interface and intuitive
+                  front end make the DRL engine accessible to researchers without deep programming skills. Integrated AI assistants built on
+                  large language models guide configuration and operation, while built-in explainability tools shed light on the multi-agent
+                  simulation outcomes.
                 </li>
                 <li>
                   <strong>Local grids and sector coupling</strong> - The modelling scope extends to distribution networks, local energy
-                  systems and cross-sector links. That lets downstream actors explore congestion management and incentive schemes.
+                  systems and cross-sector links, enabling downstream actors to simulate congestion-management measures, test regulatory
+                  options (e.g. extensions of &sect; 14a EnWG), and design incentive schemes for flexible loads such as electrolyzers, steel
+                  plants and other industrial consumers.
                 </li>
               </ul>
+              <p>
+                These developments will allow researchers, TSOs, DSOs, unit operators and regulators to assess the effects of market or
+                regulatory changes in a model that captures intricate relationships between market designs and market participants, with
+                use cases spanning reforms to grid-tariff structures, the creation of capacity markets, and bidding zone configurations.
+              </p>
             </div>
           </div>
         </div>
-      </section>
-
-      {/* Past Workshops  */}
-      <section id="workshops" className="section section-divided">
-        <h2 className="section-title">Past Workshops</h2>
-
-        <h3 className="subsection-title">Final Workshop &ndash; Agenda &amp; Session Abstracts</h3>
-        <p className="wk-meta"><strong>Date:</strong> Wednesday, 9 July 2025</p>
-        <p className="wk-meta" style={{ marginBottom: '1.5rem' }}><strong>Format:</strong> Online via Zoom</p>
-
-        <h4 className="wk-subhead">Introduction</h4>
-        <p className="wk-body-text">
-          The transition to high shares of renewable power, coupled with emerging actors and rapidly evolving market rules, calls for tools that can <strong>simulate, stress-test, and help design tomorrow's electricity markets</strong>. <strong>ASSUME</strong> (Agent-Based Electricity Markets Simulation Toolbox) combines agent-based modelling with deep-reinforcement learning to explore adaptive bidding behaviour, sector-coupling, and system-level effects across multiple inter-linked markets.
-        </p>
-        <p className="wk-body-text">
-          This final workshop showcased the toolbox, underlying science, and practical workflows. <strong>Sessions were modular</strong>&mdash;participants were able to join whichever topics interested them&mdash;but at the core was the <strong>Opening Session</strong> for essential context.
-        </p>
-
-        <h4 className="wk-subhead">Session Format</h4>
-        <p className="wk-body-text" style={{ marginBottom: '0.5rem' }}>Each technical session followed a common structure:</p>
-        <p className="wk-format"><strong>20 min &mdash; Scientific presentation</strong> (conference-style deep dive)</p>
-        <p className="wk-format"><strong>70 min &mdash; Hands-on notebook walk-through</strong> using Google Colab to reproduce key results and experiment with the model</p>
-
-        <h4 className="wk-subhead">Agenda Overview</h4>
-        <div className="wk-agenda">
-          <div className="wk-agenda-row">
-            <div className="wk-time">09:00 &ndash; 09:30</div>
-            <div className="wk-session"><strong>Opening Session</strong> &ndash; Importance of simulation tools, project overview, session previews</div>
-            <div className="wk-speaker">Prof. Dr. Anke Weidlich, ASSUME Team</div>
-            <div className="wk-duration">30 min</div>
-          </div>
-          <div className="wk-agenda-row">
-            <div className="wk-time">09:30 &ndash; 11:00</div>
-            <div className="wk-session"><strong>Session 1 &ndash;</strong> Adaptive Behavior in Zero-Marginal-Cost Systems</div>
-            <div className="wk-speaker">Kim Miskiw</div>
-            <div className="wk-duration">90 min</div>
-          </div>
-          <div className="wk-agenda-row">
-            <div className="wk-time">13:00 &ndash; 14:30</div>
-            <div className="wk-session"><strong>Session 2 &ndash;</strong> Demand-Side Management Modeling</div>
-            <div className="wk-speaker">Manish Khanra</div>
-            <div className="wk-duration">90 min</div>
-          </div>
-          <div className="wk-agenda-row">
-            <div className="wk-time">15:00 &ndash; 16:30</div>
-            <div className="wk-session"><strong>Session 3 &ndash;</strong> Redispatch Modelling &amp; Network Integration</div>
-            <div className="wk-speaker">Parag Patil</div>
-            <div className="wk-duration">90 min</div>
-          </div>
-        </div>
-
-        <h4 className="wk-subhead" style={{ marginBottom: '1rem' }}>Session Abstracts</h4>
-
-        <details className="wk-details">
-          <summary>Session 1 &ndash; Adaptive Behavior and Market Dynamics in Zero-Marginal-Cost Energy Systems</summary>
-          <div className="wk-body">
-            <p className="wk-lead"><strong>Lead:</strong> Kim Miskiw (KIT)</p>
-            <p className="wk-part-label">Scientific presentation (20 min)</p>
-            <p className="wk-body-text">
-              The presentation explains why electricity systems with near-zero marginal costs require new analytical approaches to predict bidding behavior and price formation. It outlines the <strong>multi-agent deep-reinforcement-learning</strong> framework implemented in ASSUME and highlights key modelling challenges&mdash;partial observability, non-stationarity, and convergence of competing strategies. Example architectures, including the <strong>centralised-critic/decoupled-actor</strong> setup and <strong>MATD3</strong>, demonstrate scalable solutions. Case-study results illustrate how storage and renewable agents learn profitable bids and how their interaction shapes market prices and system stability.
-            </p>
-            <p className="wk-part-label">Hands-on workshop (70 min)</p>
-            <p className="wk-body-text">
-              Participants split into small teams to build and test bidding strategies for storage and renewable agents in a simplified zero-marginal-cost market. Each team defines the agents' <strong>observation</strong> and <strong>action</strong> spaces, implements them in an interactive Google Colab notebook, and runs multi-agent simulations. Interim results are shared in short peer presentations, followed by instructor feedback. The exercise wraps up with <strong>convergence testing</strong> and visual analysis of <strong>price-duration curves</strong> to assess how learned strategies shape market outcomes and stability.
-            </p>
-          </div>
-        </details>
-
-        <details className="wk-details">
-          <summary>Session 2 &ndash; Industrial Demand-Side Management in ASSUME</summary>
-          <div className="wk-body">
-            <p className="wk-lead"><strong>Lead:</strong> Manish Khanra (Fraunhofer ISI)</p>
-            <p className="wk-part-label">Scientific presentation (20 min)</p>
-            <p className="wk-body-text">
-              This talk shows how ASSUME couples <strong>investment planning</strong> with operational market participation for energy-intensive industries. Using a paper-production plant, it demonstrates an <strong>investment layer</strong> that reflects heterogeneous risk profiles and evaluates retrofit options under uncertainties in CO&#8322; prices, natural-gas prices, renewable availability, and policy incentives. Participants will see how <strong>Flex-Bid</strong> strategies in ancillary-service markets and participation in <strong>Redispatch 3.0</strong> convert inherent flexibility into new revenue streams while reducing CO&#8322; emissions and redispatch costs.
-            </p>
-            <p className="wk-part-label">Hands-on workshop (70 min)</p>
-            <p className="wk-body-text">
-              Attendees configure <strong>Demand-Side Units</strong> for low-temperature heat processes, integrate heat pumps and thermal storage, and link them to multiple markets inside ASSUME. They experiment with Flex-Bid parameters, simulate Redispatch 3.0 participation, and compare risk-adjusted revenues, CO&#8322; savings, and redispatch reductions across various retrofit scenarios.
-            </p>
-          </div>
-        </details>
-
-        <details className="wk-details">
-          <summary>Session 3 &ndash; Redispatch Modelling and Network Integration</summary>
-          <div className="wk-body">
-            <p className="wk-lead"><strong>Lead:</strong> Parag Patil (Fraunhofer IEG)</p>
-            <p className="wk-part-label">Scientific presentation (20 min)</p>
-            <p className="wk-body-text">
-              The presentation examines Germany's growing <strong>grid-congestion</strong> challenge amid rapid renewable expansion. It details methods to locate congestion points, outlines the current redispatch process, and quantifies how escalating renewable penetration drives redispatch volumes and costs. Industrial flexibilities&mdash;such as steel and pulp &amp; paper plants&mdash;are highlighted as <strong>virtual power plants</strong> capable of supplying demand-side relief.
-            </p>
-            <p className="wk-part-label">Hands-on workshop (70 min)</p>
-            <p className="wk-body-text">
-              Participants work through a sequence of <strong>three-node case studies</strong>: (1) baseline redispatch; (2) inclusion of Demand-Side Units; (3) addition of a large industrial flexibility provider. They measure congestion and cost metrics at each stage before scaling to a <strong>Germany-wide network</strong> to evaluate regional redispatch quantities and the system-wide impact of industrial flexibility.
-            </p>
-          </div>
-        </details>
       </section>
 
       {/* Publications */}
@@ -275,8 +224,8 @@ export function ResearchPage() {
           </p>
         </div>
 
-        <h3 className="subsection-title">Related Publications (Use Cases)</h3>
-        <ul className="pub-list split-2">
+        <h3 className="subsection-title">Related Publications</h3>
+        <ul className="pub-list">
           {publications.map((publication) => (
             <li key={publication.url} className="pub-item">
               <p className="pub-title">{publication.title}</p>
