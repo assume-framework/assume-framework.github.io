@@ -9,10 +9,14 @@ export function Footer() {
           Licensed under <a href="https://www.gnu.org/licenses/agpl-3.0.html" target="_blank" rel="noopener noreferrer">AGPL-3.0</a>.
         </p>
         <p>
-          Funded by the <strong>Federal Ministry for Economic Affairs and Climate Action (BMWK)</strong>.
-          {' '}<a href="https://doi.org/10.5281/zenodo.8088760" target="_blank" rel="noopener noreferrer">Zenodo Archive</a>
-          {' · '}<a href="https://joss.theoj.org/papers/a8843ad1978808dc593b16437a2a029e" target="_blank" rel="noopener noreferrer">JOSS</a>
+          Funded by the <strong>Federal Ministry for Economic Affairs and Energy (BMWE)</strong>.
         </p>
+        <div className="footer-links">
+          <a href="https://github.com/assume-framework/assume" target="_blank" rel="noopener noreferrer">GitHub</a>
+          <a href="https://assume.readthedocs.io/en/latest/" target="_blank" rel="noopener noreferrer">Documentation</a>
+          <a href="https://doi.org/10.5281/zenodo.8088760" target="_blank" rel="noopener noreferrer">Zenodo Archive</a>
+          <a href="https://joss.theoj.org/papers/a8843ad1978808dc593b16437a2a029e" target="_blank" rel="noopener noreferrer">JOSS</a>
+        </div>
       </div>
     </footer>
   );

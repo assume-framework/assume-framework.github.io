@@ -5,7 +5,6 @@ import { ToolboxPage } from './pages/ToolboxPage';
 import { ResearchPage } from './pages/ResearchPage';
 import { CommunityPage } from './pages/CommunityPage';
 import { RoadmapPage } from './pages/RoadmapPage';
-import { FAQPage } from './pages/FAQPage';
 
 function App() {
   return (
@@ -17,7 +16,6 @@ function App() {
           <Route path="research" element={<ResearchPage />} />
           <Route path="roadmap" element={<RoadmapPage />} />
           <Route path="community" element={<CommunityPage />} />
-          <Route path="faq" element={<FAQPage />} />
           <Route path="*" element={<Navigate to="/" replace />} />
         </Route>
       </Routes>

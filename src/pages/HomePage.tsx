@@ -1,5 +1,6 @@
 import { Button } from '../components/ui/Button';
 import { FeatureCard } from '../components/ui/FeatureCard';
+import { GitHubStats } from '../components/ui/GitHubStats';
 import { Zap, Network, Lightbulb } from 'lucide-react';
 import './home.css';
 
@@ -36,40 +37,51 @@ export function HomePage() {
         </FeatureCard>
       </section>
 
+      {/* The Repository in Numbers */}
+      <section className="section">
+        <div className="section-intro">
+          <h2>Built in the Open</h2>
+          <p className="lead">
+            An active open-source community shapes ASSUME release by release &mdash; here&rsquo;s where things stand right now.
+          </p>
+        </div>
+        <GitHubStats />
+      </section>
+
       {/* Results in Action Section */}
-      <section style={{ margin: '6rem 0' }}>
-        <div style={{ textAlign: 'center', marginBottom: '3rem' }}>
-          <h2 style={{ fontSize: '2.5rem', marginBottom: '1rem' }}>Results in Action</h2>
-          <p style={{ fontSize: '1.2rem', color: 'var(--text-secondary)', maxWidth: '800px', margin: '0 auto', lineHeight: 1.6 }}>
-            ASSUME has been used to solve real-world market design problems, such as evaluating industrial demand-side flexibility, analyzing learning storage operators and modeling congestion management. 
+      <section className="section">
+        <div className="section-intro">
+          <h2>Results in Action</h2>
+          <p className="lead">
+            ASSUME has been used to solve real-world market design problems, such as evaluating industrial demand-side flexibility, analyzing learning storage operators and modeling congestion management.
             The ecosystem provides built-in integration with <strong>TimescaleDB</strong> and <strong>Grafana</strong> for instant scenario analysis.
           </p>
         </div>
-        
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '2rem', alignItems: 'center' }}>
-          <div style={{ borderRadius: 'var(--radius-lg)', overflow: 'hidden', border: '1px solid var(--border-color)', boxShadow: '0 10px 30px rgba(0,0,0,0.1)' }}>
-            <img src="/img/screenshots/Grafana_General.png" alt="Grafana General Dashboard showing electricity market prices and volumes" style={{ width: '100%', display: 'block' }} />
-          </div>
-          <div style={{ borderRadius: 'var(--radius-lg)', overflow: 'hidden', border: '1px solid var(--border-color)', boxShadow: '0 10px 30px rgba(0,0,0,0.1)' }}>
-            <img src="/img/screenshots/Grafana_General_2.png" alt="Grafana General Dashboard showing detailed agent dispatch profiles" style={{ width: '100%', display: 'block' }} />
-          </div>
+
+        <div className="showcase-grid">
+          <figure className="showcase-figure">
+            <img src="/img/screenshots/Grafana_General.png" alt="Grafana General Dashboard showing electricity market prices and volumes" />
+          </figure>
+          <figure className="showcase-figure">
+            <img src="/img/screenshots/Grafana_General_2.png" alt="Grafana General Dashboard showing detailed agent dispatch profiles" />
+          </figure>
         </div>
       </section>
 
       {/* Citing ASSUME */}
-      <section className="news-feed">
+      <section className="home-cite">
         <h2>Cite ASSUME</h2>
-        <p style={{ color: 'var(--text-secondary)', marginBottom: '1.5rem', lineHeight: 1.6 }}>
+        <p className="prose" style={{ marginBottom: '1.5rem' }}>
           If you use ASSUME in your research, please cite the SoftwareX article:
         </p>
-        <div className="news-item">
-          <p className="news-title" style={{ fontWeight: 600 }}>
+        <div className="cite-entry">
+          <p className="cite-title">
             ASSUME: An agent-based simulation framework for exploring electricity market dynamics with reinforcement learning
           </p>
-          <p style={{ color: 'var(--text-secondary)', fontSize: '0.9rem', margin: '0.5rem 0' }}>
+          <p className="cite-authors">
             Nick Harder, Kim K. Miskiw, Manish Khanra, Florian Maurer, Parag Patil, Ramiz Qussous, Christof Weinhardt, Marian Klobasa, Mario Ragwitz, Anke Weidlich — <em>SoftwareX</em>, Volume 30, 2025
           </p>
-          <a href="https://doi.org/10.1016/j.softx.2025.102176" style={{ color: 'var(--brand-primary)', fontWeight: 500 }} target="_blank" rel="noopener noreferrer">DOI: 10.1016/j.softx.2025.102176</a>
+          <a className="cite-link" href="https://doi.org/10.1016/j.softx.2025.102176" target="_blank" rel="noopener noreferrer">DOI: 10.1016/j.softx.2025.102176</a>
         </div>
       </section>
     </div>

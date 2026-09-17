@@ -4,6 +4,11 @@ on:
   push:
     branches:
       - main
+  # Rebuilds daily so the GitHub statistics and release feed stay current without
+  # a push. Note that GitHub disables scheduled workflows after 60 days without
+  # repository activity — re-enable them in the Actions tab if that happens.
+  schedule:
+    - cron: '17 5 * * *'
   workflow_dispatch:
 
 # After the first run: Settings → Pages → deploy from branch gh-pages / (root).
@@ -34,9 +39,12 @@ jobs:
 
       # Project repo:  https://<owner>.github.io/<repo>/   →  VITE_BASE=/<repo>/
       # *.github.io repo: site is at https://<name>.github.io/ (root) → VITE_BASE=/  — NOT /<name>.github.io/
+      # `npm run build` runs scripts/fetch-github-data.mjs first (prebuild); the
+      # token lifts the GitHub API rate limit from 60 to 5000 requests per hour.
       - name: Build
         env:
           VITE_BASE: ${{ endsWith(github.event.repository.name, '.github.io') && '/' || format('/{0}/', github.event.repository.name) }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           echo "VITE_BASE=$VITE_BASE"
           npm run build
